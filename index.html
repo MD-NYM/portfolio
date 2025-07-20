@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD NAYEEM HOSSAIN - Software Engineer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Gorgeous Dark Theme Variables --- */
+        :root {
+            --primary-color: #00aeff; /* A vibrant blue */
+            --primary-glow: #00d2ff;
+            --bg-dark: #111827; /* Dark blue-gray background */
+            --bg-card: rgba(31, 41, 55, 0.5); /* Semi-transparent card background */
+            --border-color: rgba(255, 255, 255, 0.1);
+            --text-color: #d1d5db; /* Light gray for text */
+            --text-light: #f9fafb; /* White for headings */
+            --text-muted-custom: #a0aec0; /* Custom color for muted text */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            line-height: 1.7;
+            background-color: var(--bg-dark);
+        }
+
+        /* --- Navbar Styling --- */
+        .navbar {
+            transition: background-color 0.4s ease-out;
+        }
+        .navbar.scrolled {
+            background-color: rgba(17, 24, 39, 0.8) !important;
+            backdrop-filter: blur(10px);
+        }
+        .navbar-brand, .nav-link {
+            color: var(--text-light) !important;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        /* --- Hero Section (Home) --- */
+        #home {
+            background-image: linear-gradient(rgba(17, 24, 39, 0.6), rgba(17, 24, 39, 0.8)), url('assets/nayeembg.jpeg');
+            background-size: cover;
+            /* Adjusted position to keep head in frame. "center 25%" pulls the image down slightly. */
+            background-position: center 25%; 
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        #home h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(0, 174, 255, 0.5);
+        }
+
+        /* Typing effect styles */
+        #home .typing-text {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            height: 40px;
+        }
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: var(--primary-glow);
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* --- Custom Buttons Animation --- */
+        .btn-custom {
+            padding: 14px 35px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-primary-custom {
+            background: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            color: var(--text-light);
+            box-shadow: 0 0 20px rgba(0, 174, 255, 0.4);
+        }
+        .btn-primary-custom:hover {
+            background: var(--primary-glow);
+            box-shadow: 0 0 30px rgba(0, 174, 255, 0.7);
+            transform: scale(1.05);
+        }
+
+        .btn-secondary-custom {
+            background-color: transparent;
+            border: 2px solid var(--text-light);
+            color: var(--text-light);
+        }
+        .btn-secondary-custom:hover {
+            background-color: var(--text-light);
+            color: var(--bg-dark);
+        }
+        
+        /* --- General Section Styling --- */
+        .section {
+            padding: 100px 0;
+            overflow: hidden;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            position: relative;
+            color: var(--text-light);
+        }
+        .section-title::after {
+            content: ''; display: block; width: 80px; height: 4px;
+            background: var(--primary-color); margin: 15px auto 0;
+            border-radius: 2px;
+        }
+        
+        /* --- About Me Section --- */
+        #about .profile-img-wrapper {
+            position: relative; width: 280px; height: 280px; margin: 0 auto;
+        }
+        #about .profile-img {
+            width: 100%; height: 100%; object-fit: cover;
+            border-radius: 50%; border: 7px solid var(--bg-card);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        #about .profile-img-wrapper::before {
+            content: ''; position: absolute; top: -7px; left: -7px; right: -7px; bottom: -7px;
+            border-radius: 50%; z-index: -1;
+            animation: glow 3s infinite ease-in-out;
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color); transform: scale(1); }
+            50% { box-shadow: 0 0 25px var(--primary-glow), 0 0 40px var(--primary-glow); transform: scale(1.02); }
+            100% { box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color); transform: scale(1); }
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            border-color: rgba(0, 174, 255, 0.3);
+        }
+
+        /* --- Skills Section --- */
+        .skills-container {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;
+        }
+        .skill-badge {
+            background: var(--bg-card); color: var(--text-color);
+            padding: 12px 22px; margin: 5px; border-radius: 8px;
+            font-weight: 500; border: 1px solid var(--border-color);
+            transition: all 0.3s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+        }
+        .skill-badge i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+        .skill-badge:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            background-color: var(--primary-color); color: var(--text-light);
+        }
+        
+        /* --- Resume Section --- */
+        .resume-container { position: relative; padding-left: 30px; }
+        .resume-container::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+            width: 2px; background: var(--secondary-color);
+        }
+        .resume-item {
+            position: relative; margin-bottom: 30px; padding: 25px;
+        }
+        .resume-item::before {
+            content: ''; position: absolute; left: -39px; top: 30px;
+            width: 18px; height: 18px; border-radius: 50%;
+            background: var(--primary-color); border: 4px solid var(--bg-dark);
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+        .resume-item h4 { color: var(--primary-color); font-family: 'Poppins', sans-serif; }
+        .resume-item .date {
+            font-weight: 600; background: var(--primary-color); color: var(--text-light);
+            padding: 3px 12px; border-radius: 20px; display: inline-block; margin-bottom: 10px;
+        }
+        .resume-item .text-muted-custom {
+            color: var(--text-muted-custom);
+        }
+        
+        /* --- Passions Section --- */
+        #passions .passion-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #0d1117; color: var(--text-color); padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+        }
+        .social-links a {
+            color: var(--text-color); font-size: 1.5rem; margin: 0 15px;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .social-links a:hover { color: var(--primary-color); transform: scale(1.2); }
+
+        /* --- Scroll Reveal Animation --- */
+        .reveal {
+            position: relative; opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-transparent fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">MD NAYEEM HOSSAIN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>MD NAYEEM HOSSAIN</h1>
+                <p class="typing-text" id="typing-subtitle"></p>
+                <div>
+                    <!-- IMPORTANT: Make sure the file "cv of nayeem.pdf" exists in the "assets" folder. -->
+                    <a href="assets/cv of nayeem.pdf" download="CV_MD_NAYEEM_HOSSAIN.pdf" class="btn btn-custom btn-primary-custom me-2">Download CV</a>
+                    <a href="#contact" class="btn btn-custom btn-secondary-custom">Hire Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-5 mb-lg-0 text-center">
+                    <div class="profile-img-wrapper">
+                        <img src="assets/nayeempass.jpeg" class="profile-img" alt="MD Nayeem Hossain Profile Picture">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <h3 class="text-light">Aspiring Java Developer</h3>
+                    <p>
+                        Aspiring Java Developer with hands-on experience in Spring, Spring Boot, Angular, and Hibernate. Eager to contribute to backend development and collaborative project delivery while continuously expanding technical expertise. Committed to learning and delivering high-quality solutions that support organizational goals.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-container">
+                <span class="skill-badge"><i class="fab fa-java"></i> Java</span>
+                <span class="skill-badge"><i class="fas fa-leaf"></i> Spring Boot</span>
+                <span class="skill-badge"><i class="fab fa-angular"></i> Angular</span>
+                <span class="skill-badge"><i class="fas fa-database"></i> PostgreSQL</span>
+                <span class="skill-badge"><i class="fas fa-code"></i> REST APIs</span>
+                <span class="skill-badge"><i class="fab fa-git-alt"></i> Git</span>
+                <span class="skill-badge"><i class="fab fa-github"></i> GitHub</span>
+                <span class="skill-badge"><i class="fab fa-jira"></i> Jira</span>
+                <span class="skill-badge"><i class="fas fa-shield-alt"></i> OAuth 2.0</span>
+                <span class="skill-badge"><i class="fas fa-key"></i> JWT</span>
+                <span class="skill-badge"><i class="fas fa-box-open"></i> Maven</span>
+                <span class="skill-badge"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                <span class="skill-badge"><i class="fab fa-html5"></i> HTML</span>
+                <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">My Resume</h2>
+            <!-- Row for Education and Courses -->
+            <div class="row">
+                <!-- Left Column for Education -->
+                <div class="col-lg-6">
+                    <h3 class="mb-4 text-light">Education</h3>
+                    <div class="resume-container">
+                        <div class="resume-item glass-card">
+                            <div class="date">2014 - 2019</div>
+                            <h4>Bachelor of Science (B.Sc.)</h4>
+                            <p class="text-muted-custom">University of Dhaka</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Column for Courses -->
+                <div class="col-lg-6">
+                    <h3 class="mb-4 text-light">Courses & Certifications</h3>
+                    <div class="resume-container">
+                        <div class="resume-item glass-card">
+                            <div class="date">2023 - 2024</div>
+                            <h4>IT Scholarship Programme (JEE)</h4>
+                            <p class="text-muted-custom">IsDB-BISEW, Dhaka</p>
+                            <p>Completed Enterprise Systems Analysis & Design course focusing on the Java Enterprise Edition stack.</p>
+                        </div>
+                        <div class="resume-item glass-card">
+                             <h4>Web and Mobile App Development</h4>
+                             <p class="text-muted-custom">Course</p>
+                             <p>Studied development using Spring Boot, Android & Flutter.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- New Row for Experience -->
+            <div class="row mt-5 pt-4">
+                <div class="col-lg-8 mx-auto">
+                    <h3 class="mb-4 text-light text-center">Experience</h3>
+                    <div class="resume-container">
+                        <div class="resume-item glass-card">
+                            <div class="date">2024 - Present</div>
+                            <h4>Junior Software Engineer</h4>
+                            <p class="text-muted-custom">eGeneration PLC, Dhaka</p>
+                            <ul>
+                                <li>Contributed to the BGB Hospital System.</li>
+                                <li>Developed modules for eGHealth microservices platform.</li>
+                                <li>Supported development of Chokher Sheba Clinic.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="glass-card text-center p-4">
+                        <h5 class="text-light">Payroll Management System</h5>
+                        <p class="card-text">
+                            A comprehensive HR & Payroll Management System for employee data management, payroll processing, and recruitment.
+                        </p>
+                        <p><strong>Technologies:</strong> Angular, Spring Boot, MySQL, Java, RESTful API.</p>
+                        <a href="https://github.com/MD-NYM/Payroll_Management_System_Final" class="btn btn-primary" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Passions Section -->
+    <section id="passions" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">My Passions</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="glass-card p-5">
+                        <i class="fas fa-rocket passion-icon"></i>
+                        <h4 class="text-light">Building Modern Web Applications</h4>
+                        <p>
+                            My passion lies in building scalable, secure, and user-focused web applications using modern Java and Angular stacks.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="glass-card p-3 mb-3 d-flex align-items-center">
+                        <i class="fas fa-phone fa-fw me-3"></i>
+                        <div><h4 class="text-light h5 mb-0">Phone</h4><p class="mb-0">+88 01515 666 542</p></div>
+                    </div>
+                     <div class="glass-card p-3 mb-3 d-flex align-items-center">
+                        <i class="fas fa-envelope fa-fw me-3"></i>
+                        <div><h4 class="text-light h5 mb-0">Email</h4><p class="mb-0">hossainmdnayeem45@gmail.com</p></div>
+                    </div>
+                     <div class="glass-card p-3 mb-3 d-flex align-items-center">
+                        <i class="fas fa-map-marker-alt fa-fw me-3"></i>
+                        <div><h4 class="text-light h5 mb-0">Address</h4><p class="mb-0">Ka-154/1, Joar Shara Bazar, Kuril, Vatara, Dhaka-1229</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="social-links mb-3">
+                <a href="https://linkedin.com/in/mdnayeem1" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/md-nym" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; Copyright 2025, MD NAYEEM HOSSAIN. All Rights Reserved.</p>
+<p class="text-sm mt-2">Developed by <a href="https://www.linkedin.com/in/anikhofficial/" target="_blank" class="underline hover:text-blue-400 transition-colors">Anik Hasan</a></p>
+        </div>
+    </footer>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript for Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // --- Navbar scroll effect ---
+            const nav = document.querySelector('.navbar');
+            if (nav) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        nav.classList.add('scrolled');
+                    } else {
+                        nav.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // --- Typing effect for subtitle ---
+            const subtitleElement = document.getElementById('typing-subtitle');
+            if (subtitleElement) {
+                const text = "A Passionate Software Engineer";
+                let index = 0;
+                subtitleElement.innerHTML = '<span class="cursor">&nbsp;</span>';
+
+                function type() {
+                    if (index < text.length) {
+                        subtitleElement.innerHTML = text.substring(0, index + 1) + '<span class="cursor">&nbsp;</span>';
+                        index++;
+                        setTimeout(type, 100);
+                    } else {
+                        subtitleElement.querySelector('.cursor').style.animation = 'blink 1s infinite';
+                    }
+                }
+                setTimeout(type, 500);
+            }
+
+            // --- Scroll reveal animation ---
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            } else {
+                document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+            }
+        });
+    </script>
+</body>
+</html>
+
