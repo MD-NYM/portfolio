@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD NAYEEM HOSSAIN - Software Engineer</title>
+    <title>Md Nayeem Hossain | Full-Stack Java Developer | Spring Boot & Microservices</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Full-Stack Java Developer specializing in scalable enterprise applications with Spring Boot, Microservices, Angular, and PostgreSQL. Experience in Healthcare & HRMS platforms.">
+    <meta name="keywords"
+        content="Java Developer, Spring Boot, Microservices, Software Engineer Bangladesh, REST API Developer, Angular, PostgreSQL, Healthcare Software, JWT, OAuth 2.0">
+    <meta name="author" content="Md Nayeem Hossain">
+    <!-- Update with your actual domain -->
+    <link rel="canonical" href="https://www.yourportfolio.com">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
 
     <style>
         /* --- Gorgeous Dark Theme Variables --- */
         :root {
-            --primary-color: #00aeff; /* A vibrant blue */
+            --primary-color: #00aeff;
             --primary-glow: #00d2ff;
-            --bg-dark: #111827; /* Dark blue-gray background */
-            --bg-card: rgba(31, 41, 55, 0.5); /* Semi-transparent card background */
+            --bg-dark: #111827;
+            --bg-card: rgba(31, 41, 55, 0.5);
             --border-color: rgba(255, 255, 255, 0.1);
-            --text-color: #d1d5db; /* Light gray for text */
-            --text-light: #f9fafb; /* White for headings */
-            --text-muted-custom: #a0aec0; /* Custom color for muted text */
+            --text-color: #d1d5db;
+            --text-light: #f9fafb;
+            --text-muted-custom: #a0aec0;
         }
 
         body {
@@ -31,28 +46,30 @@
             background-color: var(--bg-dark);
         }
 
-        /* --- Navbar Styling --- */
         .navbar {
             transition: background-color 0.4s ease-out;
         }
+
         .navbar.scrolled {
             background-color: rgba(17, 24, 39, 0.8) !important;
             backdrop-filter: blur(10px);
         }
-        .navbar-brand, .nav-link {
+
+        .navbar-brand,
+        .nav-link {
             color: var(--text-light) !important;
             transition: color 0.3s;
         }
+
         .nav-link:hover {
             color: var(--primary-color) !important;
         }
 
         /* --- Hero Section (Home) --- */
         #home {
-            background-image: linear-gradient(rgba(17, 24, 39, 0.6), rgba(17, 24, 39, 0.8)), url('assets/nayeembg.jpeg');
+            background-image: linear-gradient(rgba(17, 24, 39, 0.6), rgba(17, 24, 39, 0.8)), url('assets/Md_Nayeem_Hossain_Java_Developer_bg.png');
             background-size: cover;
-            /* Adjusted position to keep head in frame. "center 25%" pulls the image down slightly. */
-            background-position: center 25%; 
+            background-position: center 25%;
             background-attachment: fixed;
             height: 100vh;
             display: flex;
@@ -76,17 +93,26 @@
             font-weight: 300;
             height: 40px;
         }
+
         .cursor {
             display: inline-block;
             width: 3px;
             background-color: var(--primary-glow);
             animation: blink 1s infinite;
         }
+
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
-        
+
         /* --- Custom Buttons Animation --- */
         .btn-custom {
             padding: 14px 35px;
@@ -99,13 +125,14 @@
             overflow: hidden;
             z-index: 1;
         }
-        
+
         .btn-primary-custom {
             background: var(--primary-color);
             border: 2px solid var(--primary-color);
             color: var(--text-light);
             box-shadow: 0 0 20px rgba(0, 174, 255, 0.4);
         }
+
         .btn-primary-custom:hover {
             background: var(--primary-glow);
             box-shadow: 0 0 30px rgba(0, 174, 255, 0.7);
@@ -117,16 +144,18 @@
             border: 2px solid var(--text-light);
             color: var(--text-light);
         }
+
         .btn-secondary-custom:hover {
             background-color: var(--text-light);
             color: var(--bg-dark);
         }
-        
+
         /* --- General Section Styling --- */
         .section {
             padding: 100px 0;
             overflow: hidden;
         }
+
         .section-title {
             text-align: center;
             margin-bottom: 70px;
@@ -136,30 +165,61 @@
             position: relative;
             color: var(--text-light);
         }
+
         .section-title::after {
-            content: ''; display: block; width: 80px; height: 4px;
-            background: var(--primary-color); margin: 15px auto 0;
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 15px auto 0;
             border-radius: 2px;
         }
-        
+
         /* --- About Me Section --- */
         #about .profile-img-wrapper {
-            position: relative; width: 280px; height: 280px; margin: 0 auto;
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto;
         }
+
         #about .profile-img {
-            width: 100%; height: 100%; object-fit: cover;
-            border-radius: 50%; border: 7px solid var(--bg-card);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 7px solid var(--bg-card);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
+
         #about .profile-img-wrapper::before {
-            content: ''; position: absolute; top: -7px; left: -7px; right: -7px; bottom: -7px;
-            border-radius: 50%; z-index: -1;
+            content: '';
+            position: absolute;
+            top: -7px;
+            left: -7px;
+            right: -7px;
+            bottom: -7px;
+            border-radius: 50%;
+            z-index: -1;
             animation: glow 3s infinite ease-in-out;
         }
+
         @keyframes glow {
-            0% { box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color); transform: scale(1); }
-            50% { box-shadow: 0 0 25px var(--primary-glow), 0 0 40px var(--primary-glow); transform: scale(1.02); }
-            100% { box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color); transform: scale(1); }
+            0% {
+                box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+                transform: scale(1);
+            }
+
+            50% {
+                box-shadow: 0 0 25px var(--primary-glow), 0 0 40px var(--primary-glow);
+                transform: scale(1.02);
+            }
+
+            100% {
+                box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+                transform: scale(1);
+            }
         }
 
         /* Glassmorphism Card Style */
@@ -170,60 +230,102 @@
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
+
         .glass-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             border-color: rgba(0, 174, 255, 0.3);
         }
 
         /* --- Skills Section --- */
         .skills-container {
-            display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
         }
+
         .skill-badge {
-            background: var(--bg-card); color: var(--text-color);
-            padding: 12px 22px; margin: 5px; border-radius: 8px;
-            font-weight: 500; border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-color);
+            padding: 12px 22px;
+            margin: 5px;
+            border-radius: 8px;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
             transition: all 0.3s ease-in-out;
             display: inline-flex;
             align-items: center;
         }
+
         .skill-badge i {
             margin-right: 10px;
             font-size: 1.2rem;
             width: 20px;
             text-align: center;
         }
+
         .skill-badge:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            background-color: var(--primary-color); color: var(--text-light);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background-color: var(--primary-color);
+            color: var(--text-light);
         }
-        
+
         /* --- Resume Section --- */
-        .resume-container { position: relative; padding-left: 30px; }
+        .resume-container {
+            position: relative;
+            padding-left: 30px;
+        }
+
         .resume-container::before {
-            content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-            width: 2px; background: var(--secondary-color);
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-color);
         }
+
         .resume-item {
-            position: relative; margin-bottom: 30px; padding: 25px;
+            position: relative;
+            margin-bottom: 30px;
+            padding: 25px;
         }
+
         .resume-item::before {
-            content: ''; position: absolute; left: -39px; top: 30px;
-            width: 18px; height: 18px; border-radius: 50%;
-            background: var(--primary-color); border: 4px solid var(--bg-dark);
+            content: '';
+            position: absolute;
+            left: -39px;
+            top: 30px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 4px solid var(--bg-dark);
             box-shadow: 0 0 10px var(--primary-glow);
         }
-        .resume-item h4 { color: var(--primary-color); font-family: 'Poppins', sans-serif; }
-        .resume-item .date {
-            font-weight: 600; background: var(--primary-color); color: var(--text-light);
-            padding: 3px 12px; border-radius: 20px; display: inline-block; margin-bottom: 10px;
+
+        .resume-item h4 {
+            color: var(--primary-color);
+            font-family: 'Poppins', sans-serif;
         }
+
+        .resume-item .date {
+            font-weight: 600;
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 3px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
         .resume-item .text-muted-custom {
             color: var(--text-muted-custom);
         }
-        
+
         /* --- Passions Section --- */
         #passions .passion-icon {
             font-size: 3rem;
@@ -233,31 +335,59 @@
 
         /* --- Footer --- */
         footer {
-            background: #0d1117; color: var(--text-color); padding: 40px 0;
+            background: #0d1117;
+            color: var(--text-color);
+            padding: 40px 0;
             border-top: 1px solid var(--border-color);
         }
+
         .social-links a {
-            color: var(--text-color); font-size: 1.5rem; margin: 0 15px;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            margin: 0 15px;
             transition: color 0.3s, transform 0.3s;
         }
-        .social-links a:hover { color: var(--primary-color); transform: scale(1.2); }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: scale(1.2);
+        }
 
         /* --- Scroll Reveal Animation --- */
         .reveal {
-            position: relative; opacity: 0;
+            position: relative;
+            opacity: 0;
             transform: translateY(100px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Tech Tag for Projects --- */
+        .tech-tag {
+            background: rgba(0, 174, 255, 0.1);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 3px;
+            display: inline-block;
+            border: 1px solid rgba(0, 174, 255, 0.3);
+        }
     </style>
 </head>
+
 <body>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-transparent fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">MD NAYEEM HOSSAIN</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand fw-bold" href="#home">Md Nayeem Hossain</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -277,11 +407,13 @@
     <section id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>MD NAYEEM HOSSAIN</h1>
+                <h1>Md Nayeem Hossain</h1>
                 <p class="typing-text" id="typing-subtitle"></p>
                 <div>
-                    <!-- IMPORTANT: Make sure the file "cv of nayeem.pdf" exists in the "assets" folder. -->
-                    <a href="assets/cv of nayeem.pdf" download="CV_MD_NAYEEM_HOSSAIN.pdf" class="btn btn-custom btn-primary-custom me-2">Download CV</a>
+                    <!-- IMPORTANT: Rename your CV file to match this link -->
+                    <a href="assets/Md_Nayeem_Hossain_Full_Stack_Java_Developer.pdf"
+                        download="Md_Nayeem_Hossain_Full_Stack_Java_Developer_CV.pdf"
+                        class="btn btn-custom btn-primary-custom me-2">Download CV</a>
                     <a href="#contact" class="btn btn-custom btn-secondary-custom">Hire Me</a>
                 </div>
             </div>
@@ -295,38 +427,82 @@
             <div class="row align-items-center">
                 <div class="col-lg-4 mb-5 mb-lg-0 text-center">
                     <div class="profile-img-wrapper">
-                        <img src="assets/nayeempass.jpeg" class="profile-img" alt="MD Nayeem Hossain Profile Picture">
+                        <img src="assets/Md_Nayeem_Hossain_Java_Developer_pp.png" class="profile-img" alt="Md Nayeem Hossain - Java Developer">
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <h3 class="text-light">Aspiring Java Developer</h3>
+                    <h3 class="text-light mb-4">Full-Stack Java Developer</h3>
+                    <p class="lead">
+                        Results-driven developer with <strong>1+ years of experience</strong> building scalable
+                        enterprise applications using <strong>Spring Boot, Angular, and Microservices</strong>.
+                    </p>
                     <p>
-                        Aspiring Java Developer with hands-on experience in Spring, Spring Boot, Angular, and Hibernate. Eager to contribute to backend development and collaborative project delivery while continuously expanding technical expertise. Committed to learning and delivering high-quality solutions that support organizational goals.
+                        At <strong>eGeneration PLC</strong>, I develop and maintain <strong>enterprise-scale healthcare
+                            and HRMS platforms</strong> (eG-Health, eG-HRMS, eG-Accounting). My contributions include
+                        developing <strong>10+ Spring Boot microservices</strong>, implementing <strong>JWT & OAuth
+                            2.0</strong> for application security, and actively participating in
+                        <strong>Agile/Scrum</strong> teams to ensure 95%+ on-time delivery of sprint goals.
+                    </p>
+                    <p>
+                        I am passionate about leveraging technology to solve complex business problems, with a keen
+                        interest in <strong>AI Integration (Spring AI, MCP Architecture)</strong> and backend system
+                        optimization. My prior decade in data research has honed my analytical precision and
+                        system-oriented thinking.
+                    </p>
+                    <p>
+                        <strong>Seeking to contribute technical expertise in backend development and microservices
+                            architecture to innovative software solutions.</strong>
                     </p>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Skills Section -->
     <section id="skills" class="section reveal">
         <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <div class="skills-container">
-                <span class="skill-badge"><i class="fab fa-java"></i> Java</span>
-                <span class="skill-badge"><i class="fas fa-leaf"></i> Spring Boot</span>
-                <span class="skill-badge"><i class="fab fa-angular"></i> Angular</span>
-                <span class="skill-badge"><i class="fas fa-database"></i> PostgreSQL</span>
-                <span class="skill-badge"><i class="fas fa-code"></i> REST APIs</span>
-                <span class="skill-badge"><i class="fab fa-git-alt"></i> Git</span>
-                <span class="skill-badge"><i class="fab fa-github"></i> GitHub</span>
-                <span class="skill-badge"><i class="fab fa-jira"></i> Jira</span>
-                <span class="skill-badge"><i class="fas fa-shield-alt"></i> OAuth 2.0</span>
-                <span class="skill-badge"><i class="fas fa-key"></i> JWT</span>
-                <span class="skill-badge"><i class="fas fa-box-open"></i> Maven</span>
-                <span class="skill-badge"><i class="fab fa-bootstrap"></i> Bootstrap</span>
-                <span class="skill-badge"><i class="fab fa-html5"></i> HTML</span>
-                <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS</span>
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="glass-card p-4 mb-4">
+                        <h5 class="text-light mb-3"><i class="fas fa-code me-2"></i>Languages & Core</h5>
+                        <div class="skills-container">
+                            <span class="skill-badge"><i class="fab fa-java"></i> Java</span>
+                            <span class="skill-badge"><i class="fab fa-js-square"></i> JavaScript</span>
+                            <span class="skill-badge"><i class="fas fa-code"></i> TypeScript</span>
+                            <span class="skill-badge"><i class="fas fa-database"></i> SQL</span>
+                            <span class="skill-badge"><i class="fab fa-html5"></i> HTML5</span>
+                            <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS3</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-4 mb-4">
+                        <h5 class="text-light mb-3"><i class="fas fa-layer-group me-2"></i>Frameworks & Libraries</h5>
+                        <div class="skills-container">
+                            <span class="skill-badge"><i class="fas fa-leaf"></i> Spring Boot</span>
+                            <span class="skill-badge"><i class="fas fa-project-diagram"></i> Spring Framework</span>
+                            <span class="skill-badge"><i class="fas fa-robot"></i> Spring AI</span>
+                            <span class="skill-badge"><i class="fab fa-angular"></i> Angular</span>
+                            <span class="skill-badge"><i class="fas fa-database"></i> Hibernate</span>
+                            <span class="skill-badge"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-4">
+                        <h5 class="text-light mb-3"><i class="fas fa-tools me-2"></i>Tools, Platforms & Concepts</h5>
+                        <div class="skills-container">
+                            <span class="skill-badge"><i class="fab fa-git-alt"></i> Git</span>
+                            <span class="skill-badge"><i class="fab fa-github"></i> GitHub</span>
+                            <span class="skill-badge"><i class="fas fa-box"></i> Maven</span>
+                            <span class="skill-badge"><i class="fas fa-database"></i> PostgreSQL</span>
+                            <span class="skill-badge"><i class="fas fa-shield-alt"></i> JWT</span>
+                            <span class="skill-badge"><i class="fas fa-key"></i> OAuth 2.0</span>
+                            <span class="skill-badge"><i class="fab fa-jira"></i> Jira</span>
+                            <span class="skill-badge"><i class="fas fa-ship"></i> Docker</span>
+                            <span class="skill-badge"><i class="fas fa-network-wired"></i> Microservices</span>
+                            <span class="skill-badge"><i class="fas fa-plug"></i> RESTful APIs</span>
+                            <span class="skill-badge"><i class="fas fa-tasks"></i> Agile/Scrum</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -334,52 +510,90 @@
     <!-- Resume Section -->
     <section id="resume" class="section reveal">
         <div class="container">
-            <h2 class="section-title">My Resume</h2>
-            <!-- Row for Education and Courses -->
+            <h2 class="section-title">Professional Journey</h2>
+
+            <!-- Experience Section -->
+            <h3 class="text-light mb-5 text-center"><i class="fas fa-briefcase me-2"></i>Experience</h3>
             <div class="row">
-                <!-- Left Column for Education -->
-                <div class="col-lg-6">
-                    <h3 class="mb-4 text-light">Education</h3>
+                <div class="col-lg-10 mx-auto">
                     <div class="resume-container">
+                        <!-- Junior Software Engineer -->
                         <div class="resume-item glass-card">
-                            <div class="date">2014 - 2019</div>
-                            <h4>Bachelor of Science (B.Sc.)</h4>
-                            <p class="text-muted-custom">University of Dhaka</p>
+                            <div class="date">Feb 2025 – Present</div>
+                            <h4>Junior Software Engineer</h4>
+                            <p class="text-muted-custom"><strong>eGeneration PLC</strong> | Dhaka, Bangladesh</p>
+                            <ul>
+                                <li>Developed and maintained <strong>10+ microservices</strong> for eG-Health,
+                                    eG-Accounting, and eG-HRMS platforms using <strong>Spring Boot</strong>, reducing
+                                    deployment time by <strong>40%</strong> and improving system modularity.</li>
+                                <li>Implemented <strong>JWT and OAuth 2.0 authentication</strong> for 2 enterprise
+                                    applications, enhancing security and reducing unauthorized access incidents.</li>
+                                <li>Participated in <strong>Agile/Scrum</strong> ceremonies using Jira, contributing to
+                                    <strong>95% on-time delivery</strong> of sprint commitments.</li>
+                                <li>Technologies: Java, Spring Boot, Microservices, REST APIs, PostgreSQL, Angular, JWT,
+                                    OAuth 2.0, Docker, Git.</li>
+                            </ul>
                         </div>
-                    </div>
-                </div>
-                <!-- Right Column for Courses -->
-                <div class="col-lg-6">
-                    <h3 class="mb-4 text-light">Courses & Certifications</h3>
-                    <div class="resume-container">
+                        <!-- Java Developer Intern -->
                         <div class="resume-item glass-card">
-                            <div class="date">2023 - 2024</div>
-                            <h4>IT Scholarship Programme (JEE)</h4>
-                            <p class="text-muted-custom">IsDB-BISEW, Dhaka</p>
-                            <p>Completed Enterprise Systems Analysis & Design course focusing on the Java Enterprise Edition stack.</p>
+                            <div class="date">Nov 2024 – Jan 2025</div>
+                            <h4>Java Developer Intern</h4>
+                            <p class="text-muted-custom"><strong>eGeneration PLC</strong> | Dhaka, Bangladesh</p>
+                            <ul>
+                                <li>Developed <strong>15+ REST APIs</strong> for a healthcare platform using
+                                    <strong>Spring Boot and Hibernate</strong>, supporting CRUD operations and core
+                                    business logic.</li>
+                                <li>Gained foundational experience in enterprise application development within an Agile
+                                    framework.</li>
+                            </ul>
                         </div>
+                        <!-- Data Research Analyst -->
                         <div class="resume-item glass-card">
-                             <h4>Web and Mobile App Development</h4>
-                             <p class="text-muted-custom">Course</p>
-                             <p>Studied development using Spring Boot, Android & Flutter.</p>
+                            <div class="date">Apr 2014 – Nov 2024</div>
+                            <h4>Data Research Analyst (Title Examiner)</h4>
+                            <p class="text-muted-custom"><strong>Intelligent Image Management, Inc. (IIMI) USA</strong>
+                                | Dhaka, Bangladesh</p>
+                            <ul>
+                                <li>Conducted meticulous research and data analysis for U.S. real estate title chains,
+                                    ensuring 100% accuracy and compliance in high-value transactions.</li>
+                                <li>Developed strong analytical thinking, exceptional attention to detail, and
+                                    systematic problem-solving skills—directly applicable to software development and
+                                    debugging.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- New Row for Experience -->
-            <div class="row mt-5 pt-4">
-                <div class="col-lg-8 mx-auto">
-                    <h3 class="mb-4 text-light text-center">Experience</h3>
+
+            <!-- Education & Certifications Row -->
+            <div class="row mt-5 pt-5">
+                <!-- Education -->
+                <div class="col-lg-6">
+                    <h3 class="mb-4 text-light"><i class="fas fa-graduation-cap me-2"></i>Education</h3>
                     <div class="resume-container">
                         <div class="resume-item glass-card">
-                            <div class="date">2024 - Present</div>
-                            <h4>Junior Software Engineer</h4>
-                            <p class="text-muted-custom">eGeneration PLC, Dhaka</p>
-                            <ul>
-                                <li>Contributed to the BGB Hospital System.</li>
-                                <li>Developed modules for eGHealth microservices platform.</li>
-                                <li>Supported development of Chokher Sheba Clinic.</li>
-                            </ul>
+                            <div class="date">2014 - 2019</div>
+                            <h4>Bachelor of Science (B.Sc.)</h4>
+                            <p class="text-muted-custom"><strong>University of Dhaka</strong></p>
+                            <p>Major in Mathematics and Computer Science.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Courses & Certifications -->
+                <div class="col-lg-6">
+                    <h3 class="mb-4 text-light"><i class="fas fa-certificate me-2"></i>Courses & Certifications</h3>
+                    <div class="resume-container">
+                        <div class="resume-item glass-card">
+                            <div class="date">2023 - 2024</div>
+                            <h4>Diploma in Enterprise Systems Analysis & Design (JEE)</h4>
+                            <p class="text-muted-custom"><strong>IsDB-BISEW IT Scholarship Programme</strong></p>
+                            <p>Specialized in Java EE, Spring Framework, Microservices, Angular, and enterprise
+                                application development.</p>
+                        </div>
+                        <div class="resume-item glass-card">
+                            <h4>Web and Mobile App Development</h4>
+                            <p class="text-muted-custom"><strong>IsDB-BISEW</strong></p>
+                            <p>Certification in development using Spring Boot, Android & Flutter.</p>
                         </div>
                     </div>
                 </div>
@@ -392,15 +606,40 @@
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="glass-card text-center p-4">
-                        <h5 class="text-light">Payroll Management System</h5>
-                        <p class="card-text">
-                            A comprehensive HR & Payroll Management System for employee data management, payroll processing, and recruitment.
-                        </p>
-                        <p><strong>Technologies:</strong> Angular, Spring Boot, MySQL, Java, RESTful API.</p>
-                        <a href="https://github.com/MD-NYM/Payroll_Management_System_Final" class="btn btn-primary" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
+                <div class="col-lg-10 mx-auto">
+                    <div class="glass-card p-4 mb-4">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5 class="text-light">HR & Payroll Management System</h5>
+                                <p class="card-text">
+                                    A comprehensive <strong>full-stack payroll management system</strong> built from
+                                    scratch. Features include complete employee data management, automated payroll
+                                    processing, benefits administration, and reporting modules.
+                                </p>
+                                <p><strong>Key Contribution:</strong> Designed and implemented the entire backend with
+                                    <strong>RESTful APIs using Spring Boot</strong> and Hibernate for efficient data
+                                    handling and complex business logic.</p>
+                                <div>
+                                    <span class="tech-tag">Angular</span>
+                                    <span class="tech-tag">Spring Boot</span>
+                                    <span class="tech-tag">Java</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">REST APIs</span>
+                                    <span class="tech-tag">Hibernate</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center mt-3 mt-md-0">
+                                <a href="https://github.com/MD-NYM/Payroll_Management_System_Final"
+                                    class="btn btn-primary-custom btn-custom" target="_blank">
+                                    <i class="fab fa-github me-2"></i>View on GitHub
+                                </a>
+                            </div>
+                        </div>
                     </div>
+                    <p class="text-center text-muted-custom mt-4">
+                        <em>Note: Professional work on eG-Health, eG-HRMS, and eG-Accounting platforms is detailed in
+                            the Experience section.</em>
+                    </p>
                 </div>
             </div>
         </div>
@@ -409,14 +648,17 @@
     <!-- Passions Section -->
     <section id="passions" class="section reveal">
         <div class="container">
-            <h2 class="section-title">My Passions</h2>
+            <h2 class="section-title">Professional Focus</h2>
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <div class="glass-card p-5">
-                        <i class="fas fa-rocket passion-icon"></i>
-                        <h4 class="text-light">Building Modern Web Applications</h4>
+                        <i class="fas fa-cogs passion-icon"></i>
+                        <h4 class="text-light">Backend & System Architecture</h4>
                         <p>
-                            My passion lies in building scalable, secure, and user-focused web applications using modern Java and Angular stacks.
+                            Passionate about designing robust, scalable backend systems with <strong>Spring Boot and
+                                Microservices</strong>. Keenly interested in the intersection of <strong>enterprise
+                                software and AI</strong>, specifically <strong>AI Agent development and MCP
+                                architecture</strong>, to build the next generation of intelligent applications.
                         </p>
                     </div>
                 </div>
@@ -432,32 +674,44 @@
                 <div class="col-lg-8 mx-auto">
                     <div class="glass-card p-3 mb-3 d-flex align-items-center">
                         <i class="fas fa-phone fa-fw me-3"></i>
-                        <div><h4 class="text-light h5 mb-0">Phone</h4><p class="mb-0">+88 01515 666 542</p></div>
+                        <div>
+                            <h4 class="text-light h5 mb-0">Phone</h4>
+                            <p class="mb-0">+880 1515 666 542</p>
+                        </div>
                     </div>
-                     <div class="glass-card p-3 mb-3 d-flex align-items-center">
+                    <div class="glass-card p-3 mb-3 d-flex align-items-center">
                         <i class="fas fa-envelope fa-fw me-3"></i>
-                        <div><h4 class="text-light h5 mb-0">Email</h4><p class="mb-0">hossainmdnayeem45@gmail.com</p></div>
+                        <div>
+                            <h4 class="text-light h5 mb-0">Email</h4>
+                            <p class="mb-0">hossainmdnayeem45@gmail.com</p>
+                        </div>
                     </div>
-                     <div class="glass-card p-3 mb-3 d-flex align-items-center">
+                    <div class="glass-card p-3 mb-3 d-flex align-items-center">
                         <i class="fas fa-map-marker-alt fa-fw me-3"></i>
-                        <div><h4 class="text-light h5 mb-0">Address</h4><p class="mb-0">Ka-154/1, Joar Shara Bazar, Kuril, Vatara, Dhaka-1229</p></div>
+                        <div>
+                            <h4 class="text-light h5 mb-0">Location</h4>
+                            <p class="mb-0">Dhaka, Bangladesh</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer class="text-center">
         <div class="container">
             <div class="social-links mb-3">
-                <a href="https://linkedin.com/in/mdnayeem1" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/md-nym" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/mdnayeem1" target="_blank" aria-label="LinkedIn"
+                    title="Connect on LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/md-nym" target="_blank" aria-label="GitHub" title="View GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
-            <p>&copy; Copyright 2025, MD NAYEEM HOSSAIN. All Rights Reserved.</p>
-<p class="text-sm mt-2">Developed by <a href="https://www.linkedin.com/in/anikhofficial/" target="_blank" class="underline hover:text-blue-400 transition-colors">Anik Hasan</a></p>
-        </div>
-    </footer>
+            <p>&copy; Copyright <span id="currentYear"></span>, Md Nayeem Hossain. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Crafted with precision for the tech industry.</p>
         </div>
     </footer>
 
@@ -467,7 +721,9 @@
     <!-- Custom JavaScript for Animations -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            
+            // --- Set Current Year in Footer ---
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
             // --- Navbar scroll effect ---
             const nav = document.querySelector('.navbar');
             if (nav) {
@@ -483,7 +739,7 @@
             // --- Typing effect for subtitle ---
             const subtitleElement = document.getElementById('typing-subtitle');
             if (subtitleElement) {
-                const text = "A Passionate Software Engineer";
+                const text = "Full-Stack Java Developer | Spring Boot • Microservices • REST APIs";
                 let index = 0;
                 subtitleElement.innerHTML = '<span class="cursor">&nbsp;</span>';
 
@@ -517,5 +773,5 @@
         });
     </script>
 </body>
-</html>
 
+</html>
