@@ -2,776 +2,1002 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Md Nayeem Hossain | Full-Stack Java Developer | Spring Boot & Microservices</title>
-
-    <!-- SEO Meta Tags -->
     <meta name="description"
-        content="Full-Stack Java Developer specializing in scalable enterprise applications with Spring Boot, Microservices, Angular, and PostgreSQL. Experience in Healthcare & HRMS platforms.">
+        content="Full-Stack Java Developer specializing in scalable enterprise applications with Spring Boot, Microservices, Angular, and PostgreSQL. Healthcare & HRMS platforms.">
     <meta name="keywords"
         content="Java Developer, Spring Boot, Microservices, Software Engineer Bangladesh, REST API Developer, Angular, PostgreSQL, Healthcare Software, JWT, OAuth 2.0">
     <meta name="author" content="Md Nayeem Hossain">
-    <!-- Update with your actual domain -->
-    <link rel="canonical" href="https://www.yourportfolio.com">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://md-nym.github.io/portfolio">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Md Nayeem Hossain | Full-Stack Java Developer">
+    <meta property="og:description"
+        content="Full-Stack Java Developer specializing in Spring Boot, Microservices, Angular, and PostgreSQL.">
+    <meta property="og:image"
+        content="https://md-nym.github.io/portfolio/assets/Md_Nayeem_Hossain_Java_Developer_pp.png">
+    <meta property="og:url" content="https://md-nym.github.io/portfolio">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Md Nayeem Hossain | Full-Stack Java Developer">
+    <meta property="twitter:description"
+        content="Full-Stack Java Developer specializing in Spring Boot, Microservices, Angular, and PostgreSQL.">
+    <meta property="twitter:image"
+        content="https://md-nym.github.io/portfolio/assets/Md_Nayeem_Hossain_Java_Developer_pp.png">
 
-    <!-- Google Fonts -->
+    <!-- Favicons -->
+    <link href="assets/Md_Nayeem_Hossain_Java_Developer_icon.ico" rel="icon">
+    <link href="assets/Md_Nayeem_Hossain_Java_Developer_icon.ico" rel="apple-touch-icon">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="assets/css/main.css" as="style">
+
+    <!-- Fonts -->
+    <!-- Optimized: Reduced font weights (removed 100, 800, 900) for better performance. display=swap ensures text remains visible during font load -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Quicksand:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <style>
-        /* --- Gorgeous Dark Theme Variables --- */
-        :root {
-            --primary-color: #00aeff;
-            --primary-glow: #00d2ff;
-            --bg-dark: #111827;
-            --bg-card: rgba(31, 41, 55, 0.5);
-            --border-color: rgba(255, 255, 255, 0.1);
-            --text-color: #d1d5db;
-            --text-light: #f9fafb;
-            --text-muted-custom: #a0aec0;
-        }
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--text-color);
-            line-height: 1.7;
-            background-color: var(--bg-dark);
-        }
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link href="assets/css/styles.css" rel="stylesheet">
 
-        .navbar {
-            transition: background-color 0.4s ease-out;
-        }
-
-        .navbar.scrolled {
-            background-color: rgba(17, 24, 39, 0.8) !important;
-            backdrop-filter: blur(10px);
-        }
-
-        .navbar-brand,
-        .nav-link {
-            color: var(--text-light) !important;
-            transition: color 0.3s;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-color) !important;
-        }
-
-        /* --- Hero Section (Home) --- */
-        #home {
-            background-image: linear-gradient(rgba(17, 24, 39, 0.6), rgba(17, 24, 39, 0.8)), url('assets/Md_Nayeem_Hossain_Java_Developer_bg.png');
-            background-size: cover;
-            background-position: center 25%;
-            background-attachment: fixed;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--text-light);
-        }
-
-        #home h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 4.5rem;
-            font-weight: 700;
-            text-shadow: 0 0 15px rgba(0, 174, 255, 0.5);
-        }
-
-        /* Typing effect styles */
-        #home .typing-text {
-            font-size: 1.8rem;
-            margin-bottom: 40px;
-            font-weight: 300;
-            height: 40px;
-        }
-
-        .cursor {
-            display: inline-block;
-            width: 3px;
-            background-color: var(--primary-glow);
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0;
-            }
-        }
-
-        /* --- Custom Buttons Animation --- */
-        .btn-custom {
-            padding: 14px 35px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            text-transform: uppercase;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn-primary-custom {
-            background: var(--primary-color);
-            border: 2px solid var(--primary-color);
-            color: var(--text-light);
-            box-shadow: 0 0 20px rgba(0, 174, 255, 0.4);
-        }
-
-        .btn-primary-custom:hover {
-            background: var(--primary-glow);
-            box-shadow: 0 0 30px rgba(0, 174, 255, 0.7);
-            transform: scale(1.05);
-        }
-
-        .btn-secondary-custom {
-            background-color: transparent;
-            border: 2px solid var(--text-light);
-            color: var(--text-light);
-        }
-
-        .btn-secondary-custom:hover {
-            background-color: var(--text-light);
-            color: var(--bg-dark);
-        }
-
-        /* --- General Section Styling --- */
-        .section {
-            padding: 100px 0;
-            overflow: hidden;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 70px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 3rem;
-            position: relative;
-            color: var(--text-light);
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--primary-color);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-
-        /* --- About Me Section --- */
-        #about .profile-img-wrapper {
-            position: relative;
-            width: 280px;
-            height: 280px;
-            margin: 0 auto;
-        }
-
-        #about .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 7px solid var(--bg-card);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        #about .profile-img-wrapper::before {
-            content: '';
-            position: absolute;
-            top: -7px;
-            left: -7px;
-            right: -7px;
-            bottom: -7px;
-            border-radius: 50%;
-            z-index: -1;
-            animation: glow 3s infinite ease-in-out;
-        }
-
-        @keyframes glow {
-            0% {
-                box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
-                transform: scale(1);
-            }
-
-            50% {
-                box-shadow: 0 0 25px var(--primary-glow), 0 0 40px var(--primary-glow);
-                transform: scale(1.02);
-            }
-
-            100% {
-                box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
-                transform: scale(1);
-            }
-        }
-
-        /* Glassmorphism Card Style */
-        .glass-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            border-color: rgba(0, 174, 255, 0.3);
-        }
-
-        /* --- Skills Section --- */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .skill-badge {
-            background: var(--bg-card);
-            color: var(--text-color);
-            padding: 12px 22px;
-            margin: 5px;
-            border-radius: 8px;
-            font-weight: 500;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease-in-out;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        .skill-badge i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-            width: 20px;
-            text-align: center;
-        }
-
-        .skill-badge:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            background-color: var(--primary-color);
-            color: var(--text-light);
-        }
-
-        /* --- Resume Section --- */
-        .resume-container {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .resume-container::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--primary-color);
-        }
-
-        .resume-item {
-            position: relative;
-            margin-bottom: 30px;
-            padding: 25px;
-        }
-
-        .resume-item::before {
-            content: '';
-            position: absolute;
-            left: -39px;
-            top: 30px;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: var(--primary-color);
-            border: 4px solid var(--bg-dark);
-            box-shadow: 0 0 10px var(--primary-glow);
-        }
-
-        .resume-item h4 {
-            color: var(--primary-color);
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .resume-item .date {
-            font-weight: 600;
-            background: var(--primary-color);
-            color: var(--text-light);
-            padding: 3px 12px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .resume-item .text-muted-custom {
-            color: var(--text-muted-custom);
-        }
-
-        /* --- Passions Section --- */
-        #passions .passion-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background: #0d1117;
-            color: var(--text-color);
-            padding: 40px 0;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .social-links a {
-            color: var(--text-color);
-            font-size: 1.5rem;
-            margin: 0 15px;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--primary-color);
-            transform: scale(1.2);
-        }
-
-        /* --- Scroll Reveal Animation --- */
-        .reveal {
-            position: relative;
-            opacity: 0;
-            transform: translateY(100px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- Tech Tag for Projects --- */
-        .tech-tag {
-            background: rgba(0, 174, 255, 0.1);
-            color: var(--primary-color);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin: 3px;
-            display: inline-block;
-            border: 1px solid rgba(0, 174, 255, 0.3);
-        }
-    </style>
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Md Nayeem Hossain",
+      "jobTitle": "Full-Stack Java Developer",
+      "image": "https://md-nym.github.io/portfolio/assets/Md_Nayeem_Hossain_Java_Developer_pp.png",
+      "url": "https://md-nym.github.io/portfolio",
+      "sameAs": [
+          "https://linkedin.com/in/mdnayeem1",
+          "https://github.com/md-nym"
+      ],
+      "email": "hossainmdnayeem45@gmail.com",
+      "telephone": "+8801515666542",
+      "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Dhaka",
+          "addressCountry": "Bangladesh"
+      },
+      "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "University of Dhaka"
+      },
+      "worksFor": {
+          "@type": "Organization",
+          "name": "eGeneration PLC"
+      },
+      "hasCredential": [
+          {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Diploma",
+              "name": "Diploma in Enterprise Systems Analysis & Design",
+              "educationalLevel": "Diploma",
+              "recognizedBy": {
+                  "@type": "Organization",
+                  "name": "IsDB-BISEW IT Scholarship Programme"
+              }
+          },
+          {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Certificate",
+              "name": "Web and Mobile App Development",
+              "educationalLevel": "Certificate",
+              "recognizedBy": {
+                  "@type": "Organization",
+                  "name": "IsDB-BISEW"
+              }
+          }
+      ],
+      "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Full-Stack Java Developer",
+          "occupationLocation": {
+              "@type": "City",
+              "name": "Dhaka",
+              "addressCountry": "Bangladesh"
+          },
+          "skills": [
+              "Spring Boot",
+              "Microservices",
+              "Java",
+              "Angular",
+              "PostgreSQL"
+          ]
+      },
+      "knowsAbout": [
+          "Spring Boot",
+          "Microservices",
+          "Java",
+          "Angular",
+          "PostgreSQL",
+          "TypeScript",
+          "JavaScript",
+          "Hibernate",
+          "Docker",
+          "Git",
+          "JWT",
+          "OAuth 2.0",
+          "REST APIs",
+          "Enterprise Applications"
+      ]
+  }
+  </script>
 </head>
 
-<body>
+<body class="index-page">
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-transparent fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">Md Nayeem Hossain</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    <!-- Skip to Main Content Link (Accessibility) -->
+    <a href="#main" class="skip-to-main" aria-label="Skip navigation and go to main content">Skip to main content</a>
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+            <nav id="navmenu" class="navmenu">
+
+                <div class="profile-img">
+                    <img src="assets/Md_Nayeem_Hossain_Java_Developer_pp.png" alt="Md Nayeem Hossain"
+                        class="img-fluid rounded-circle" width="150" height="150"
+                        onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ddd\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EImage not found%3C/text%3E%3C/svg%3E';">
+                </div>
+
+                <a href="index.html" class="logo d-flex align-items-center justify-content-center active"
+                   aria-current="page">
+                    <h1 class="sitename">Md Nayeem Hossain</h1>
+                </a>
+
+                <div class="social-links text-center">
+                    <a href="https://linkedin.com/in/mdnayeem1" target="_blank" rel="noopener noreferrer"
+                        class="linkedin" aria-label="Visit Md Nayeem Hossain's LinkedIn profile"><i
+                            class="bi bi-linkedin"></i></a>
+                    <a href="https://github.com/md-nym" target="_blank" rel="noopener noreferrer" class="github"
+                        aria-label="Visit Md Nayeem Hossain's GitHub profile"><i class="bi bi-github"></i></a>
+                </div>
+
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-            </div>
+                <button type="button" class="mobile-nav-toggle d-xl-none" 
+                        aria-label="Toggle mobile navigation" 
+                        aria-expanded="false"
+                        aria-controls="navmenu">
+                    <i class="bi bi-list"></i>
+                </button>
+            </nav>
+
         </div>
-    </nav>
+    </header>
 
-    <!-- Home Section -->
-    <section id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Md Nayeem Hossain</h1>
-                <p class="typing-text" id="typing-subtitle"></p>
-                <div>
-                    <!-- IMPORTANT: Rename your CV file to match this link -->
-                    <a href="assets/Md_Nayeem_Hossain_Full_Stack_Java_Developer.pdf"
-                        download="Md_Nayeem_Hossain_Full_Stack_Java_Developer_CV.pdf"
-                        class="btn btn-custom btn-primary-custom me-2">Download CV</a>
-                    <a href="#contact" class="btn btn-custom btn-secondary-custom">Hire Me</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main id="main" class="main">
 
-    <!-- About Me Section -->
-    <section id="about" class="section reveal">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="row align-items-center">
-                <div class="col-lg-4 mb-5 mb-lg-0 text-center">
-                    <div class="profile-img-wrapper">
-                        <img src="assets/Md_Nayeem_Hossain_Java_Developer_pp.png" class="profile-img" alt="Md Nayeem Hossain - Java Developer">
-                    </div>
-                </div>
-                <div class="col-lg-8">
-                    <h3 class="text-light mb-4">Full-Stack Java Developer</h3>
-                    <p class="lead">
-                        Results-driven developer with <strong>1+ years of experience</strong> building scalable
-                        enterprise applications using <strong>Spring Boot, Angular, and Microservices</strong>.
-                    </p>
-                    <p>
-                        At <strong>eGeneration PLC</strong>, I develop and maintain <strong>enterprise-scale healthcare
-                            and HRMS platforms</strong> (eG-Health, eG-HRMS, eG-Accounting). My contributions include
-                        developing <strong>10+ Spring Boot microservices</strong>, implementing <strong>JWT & OAuth
-                            2.0</strong> for application security, and actively participating in
-                        <strong>Agile/Scrum</strong> teams to ensure 95%+ on-time delivery of sprint goals.
-                    </p>
-                    <p>
-                        I am passionate about leveraging technology to solve complex business problems, with a keen
-                        interest in <strong>AI Integration (Spring AI, MCP Architecture)</strong> and backend system
-                        optimization. My prior decade in data research has honed my analytical precision and
-                        system-oriented thinking.
-                    </p>
-                    <p>
-                        <strong>Seeking to contribute technical expertise in backend development and microservices
-                            architecture to innovative software solutions.</strong>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Hero Section -->
+        <section id="hero" class="hero section">
 
-    <!-- Skills Section -->
-    <section id="skills" class="section reveal">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <div class="glass-card p-4 mb-4">
-                        <h5 class="text-light mb-3"><i class="fas fa-code me-2"></i>Languages & Core</h5>
-                        <div class="skills-container">
-                            <span class="skill-badge"><i class="fab fa-java"></i> Java</span>
-                            <span class="skill-badge"><i class="fab fa-js-square"></i> JavaScript</span>
-                            <span class="skill-badge"><i class="fas fa-code"></i> TypeScript</span>
-                            <span class="skill-badge"><i class="fas fa-database"></i> SQL</span>
-                            <span class="skill-badge"><i class="fab fa-html5"></i> HTML5</span>
-                            <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS3</span>
-                        </div>
-                    </div>
-                    <div class="glass-card p-4 mb-4">
-                        <h5 class="text-light mb-3"><i class="fas fa-layer-group me-2"></i>Frameworks & Libraries</h5>
-                        <div class="skills-container">
-                            <span class="skill-badge"><i class="fas fa-leaf"></i> Spring Boot</span>
-                            <span class="skill-badge"><i class="fas fa-project-diagram"></i> Spring Framework</span>
-                            <span class="skill-badge"><i class="fas fa-robot"></i> Spring AI</span>
-                            <span class="skill-badge"><i class="fab fa-angular"></i> Angular</span>
-                            <span class="skill-badge"><i class="fas fa-database"></i> Hibernate</span>
-                            <span class="skill-badge"><i class="fab fa-bootstrap"></i> Bootstrap</span>
-                        </div>
-                    </div>
-                    <div class="glass-card p-4">
-                        <h5 class="text-light mb-3"><i class="fas fa-tools me-2"></i>Tools, Platforms & Concepts</h5>
-                        <div class="skills-container">
-                            <span class="skill-badge"><i class="fab fa-git-alt"></i> Git</span>
-                            <span class="skill-badge"><i class="fab fa-github"></i> GitHub</span>
-                            <span class="skill-badge"><i class="fas fa-box"></i> Maven</span>
-                            <span class="skill-badge"><i class="fas fa-database"></i> PostgreSQL</span>
-                            <span class="skill-badge"><i class="fas fa-shield-alt"></i> JWT</span>
-                            <span class="skill-badge"><i class="fas fa-key"></i> OAuth 2.0</span>
-                            <span class="skill-badge"><i class="fab fa-jira"></i> Jira</span>
-                            <span class="skill-badge"><i class="fas fa-ship"></i> Docker</span>
-                            <span class="skill-badge"><i class="fas fa-network-wired"></i> Microservices</span>
-                            <span class="skill-badge"><i class="fas fa-plug"></i> RESTful APIs</span>
-                            <span class="skill-badge"><i class="fas fa-tasks"></i> Agile/Scrum</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="container">
+                <div class="row g-0 align-items-center">
 
-    <!-- Resume Section -->
-    <section id="resume" class="section reveal">
-        <div class="container">
-            <h2 class="section-title">Professional Journey</h2>
+                    <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
+                        <div class="content-wrapper">
+                            <h1 class="hero-title">Full-Stack Java Developer <span class="typed"
+                                    data-typed-items="Spring Boot, Microservices, Angular, Enterprise Apps"></span></h1>
+                            <p class="lead">Full-stack Java Developer with 1+ years of experience in building scalable
+                                enterprise applications using Spring Boot, Angular, and microservices architecture.
+                                Proven ability to develop and optimize healthcare and HRMS platforms.</p>
 
-            <!-- Experience Section -->
-            <h3 class="text-light mb-5 text-center"><i class="fas fa-briefcase me-2"></i>Experience</h3>
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <div class="resume-container">
-                        <!-- Junior Software Engineer -->
-                        <div class="resume-item glass-card">
-                            <div class="date">Feb 2025 – Present</div>
-                            <h4>Junior Software Engineer</h4>
-                            <p class="text-muted-custom"><strong>eGeneration PLC</strong> | Dhaka, Bangladesh</p>
-                            <ul>
-                                <li>Developed and maintained <strong>10+ microservices</strong> for eG-Health,
-                                    eG-Accounting, and eG-HRMS platforms using <strong>Spring Boot</strong>, reducing
-                                    deployment time by <strong>40%</strong> and improving system modularity.</li>
-                                <li>Implemented <strong>JWT and OAuth 2.0 authentication</strong> for 2 enterprise
-                                    applications, enhancing security and reducing unauthorized access incidents.</li>
-                                <li>Participated in <strong>Agile/Scrum</strong> ceremonies using Jira, contributing to
-                                    <strong>95% on-time delivery</strong> of sprint commitments.</li>
-                                <li>Technologies: Java, Spring Boot, Microservices, REST APIs, PostgreSQL, Angular, JWT,
-                                    OAuth 2.0, Docker, Git.</li>
-                            </ul>
-                        </div>
-                        <!-- Java Developer Intern -->
-                        <div class="resume-item glass-card">
-                            <div class="date">Nov 2024 – Jan 2025</div>
-                            <h4>Java Developer Intern</h4>
-                            <p class="text-muted-custom"><strong>eGeneration PLC</strong> | Dhaka, Bangladesh</p>
-                            <ul>
-                                <li>Developed <strong>15+ REST APIs</strong> for a healthcare platform using
-                                    <strong>Spring Boot and Hibernate</strong>, supporting CRUD operations and core
-                                    business logic.</li>
-                                <li>Gained foundational experience in enterprise application development within an Agile
-                                    framework.</li>
-                            </ul>
-                        </div>
-                        <!-- Data Research Analyst -->
-                        <div class="resume-item glass-card">
-                            <div class="date">Apr 2014 – Nov 2024</div>
-                            <h4>Data Research Analyst (Title Examiner)</h4>
-                            <p class="text-muted-custom"><strong>Intelligent Image Management, Inc. (IIMI) USA</strong>
-                                | Dhaka, Bangladesh</p>
-                            <ul>
-                                <li>Conducted meticulous research and data analysis for U.S. real estate title chains,
-                                    ensuring 100% accuracy and compliance in high-value transactions.</li>
-                                <li>Developed strong analytical thinking, exceptional attention to detail, and
-                                    systematic problem-solving skills—directly applicable to software development and
-                                    debugging.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Education & Certifications Row -->
-            <div class="row mt-5 pt-5">
-                <!-- Education -->
-                <div class="col-lg-6">
-                    <h3 class="mb-4 text-light"><i class="fas fa-graduation-cap me-2"></i>Education</h3>
-                    <div class="resume-container">
-                        <div class="resume-item glass-card">
-                            <div class="date">2014 - 2019</div>
-                            <h4>Bachelor of Science (B.Sc.)</h4>
-                            <p class="text-muted-custom"><strong>University of Dhaka</strong></p>
-                            <p>Major in Mathematics and Computer Science.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Courses & Certifications -->
-                <div class="col-lg-6">
-                    <h3 class="mb-4 text-light"><i class="fas fa-certificate me-2"></i>Courses & Certifications</h3>
-                    <div class="resume-container">
-                        <div class="resume-item glass-card">
-                            <div class="date">2023 - 2024</div>
-                            <h4>Diploma in Enterprise Systems Analysis & Design (JEE)</h4>
-                            <p class="text-muted-custom"><strong>IsDB-BISEW IT Scholarship Programme</strong></p>
-                            <p>Specialized in Java EE, Spring Framework, Microservices, Angular, and enterprise
-                                application development.</p>
-                        </div>
-                        <div class="resume-item glass-card">
-                            <h4>Web and Mobile App Development</h4>
-                            <p class="text-muted-custom"><strong>IsDB-BISEW</strong></p>
-                            <p>Certification in development using Spring Boot, Android & Flutter.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section reveal">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <div class="glass-card p-4 mb-4">
-                        <div class="row align-items-center">
-                            <div class="col-md-8">
-                                <h5 class="text-light">HR & Payroll Management System</h5>
-                                <p class="card-text">
-                                    A comprehensive <strong>full-stack payroll management system</strong> built from
-                                    scratch. Features include complete employee data management, automated payroll
-                                    processing, benefits administration, and reporting modules.
-                                </p>
-                                <p><strong>Key Contribution:</strong> Designed and implemented the entire backend with
-                                    <strong>RESTful APIs using Spring Boot</strong> and Hibernate for efficient data
-                                    handling and complex business logic.</p>
-                                <div>
-                                    <span class="tech-tag">Angular</span>
-                                    <span class="tech-tag">Spring Boot</span>
-                                    <span class="tech-tag">Java</span>
-                                    <span class="tech-tag">MySQL</span>
-                                    <span class="tech-tag">REST APIs</span>
-                                    <span class="tech-tag">Hibernate</span>
+                            <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+                                <div class="stat-item">
+                                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="10"
+                                        data-purecounter-duration="2">0</span>
+                                    <span class="stat-label">Microservices Developed</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="1"
+                                        data-purecounter-duration="2">0</span>
+                                    <span class="stat-label">Years Experience</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="purecounter" data-purecounter-start="0" data-purecounter-end="95"
+                                        data-purecounter-duration="2">0</span>
+                                    <span class="stat-label">% On-Time Delivery</span>
                                 </div>
                             </div>
-                            <div class="col-md-4 text-center mt-3 mt-md-0">
-                                <a href="https://github.com/MD-NYM/Payroll_Management_System_Final"
-                                    class="btn btn-primary-custom btn-custom" target="_blank">
-                                    <i class="fab fa-github me-2"></i>View on GitHub
-                                </a>
+
+                            <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
+                                <a href="assets/Md_Nayeem_Hossain_Java_Developer_CV.pdf"
+                                    download="Md_Nayeem_Hossain_Java_Developer_CV.pdf" class="btn btn-primary">Download
+                                    CV</a>
+                                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                            </div>
+
+                            <div class="social-links" data-aos="fade-up" data-aos-delay="400">
+                                <a href="https://linkedin.com/in/mdnayeem1" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Visit Md Nayeem Hossain's LinkedIn profile"><i
+                                        class="bi bi-linkedin"></i></a>
+                                <a href="https://github.com/md-nym" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Visit Md Nayeem Hossain's GitHub profile"><i
+                                        class="bi bi-github"></i></a>
                             </div>
                         </div>
                     </div>
-                    <p class="text-center text-muted-custom mt-4">
-                        <em>Note: Professional work on eG-Health, eG-HRMS, and eG-Accounting platforms is detailed in
-                            the Experience section.</em>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Passions Section -->
-    <section id="passions" class="section reveal">
-        <div class="container">
-            <h2 class="section-title">Professional Focus</h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <div class="glass-card p-5">
-                        <i class="fas fa-cogs passion-icon"></i>
-                        <h4 class="text-light">Backend & System Architecture</h4>
-                        <p>
-                            Passionate about designing robust, scalable backend systems with <strong>Spring Boot and
-                                Microservices</strong>. Keenly interested in the intersection of <strong>enterprise
-                                software and AI</strong>, specifically <strong>AI Agent development and MCP
-                                architecture</strong>, to build the next generation of intelligent applications.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section reveal">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="glass-card p-3 mb-3 d-flex align-items-center">
-                        <i class="fas fa-phone fa-fw me-3"></i>
-                        <div>
-                            <h4 class="text-light h5 mb-0">Phone</h4>
-                            <p class="mb-0">+880 1515 666 542</p>
+                    <div class="col-lg-6 hero-image" data-aos="fade-left" data-aos-delay="200">
+                        <div class="image-container">
+                            <div class="floating-elements">
+                                <div class="floating-card card-1" data-aos="zoom-in" data-aos-delay="300">
+                                    <i class="fas fa-leaf"></i>
+                                    <span>Spring Boot</span>
+                                </div>
+                                <div class="floating-card card-2" data-aos="zoom-in" data-aos-delay="400">
+                                    <i class="bi bi-diagram-3"></i>
+                                    <span>Microservices</span>
+                                </div>
+                                <div class="floating-card card-3" data-aos="zoom-in" data-aos-delay="500">
+                                    <i class="bi bi-shield-check"></i>
+                                    <span>Enterprise Apps</span>
+                                </div>
+                            </div>
+                            <img src="assets/Md_Nayeem_Hossain_Java_Developer_bg.png"
+                                alt="Md Nayeem Hossain - Full-Stack Java Developer" class="img-fluid hero-main-image"
+                                width="800" height="600"
+                                onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'600\'%3E%3Crect width=\'800\' height=\'600\' fill=\'%23ddd\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EImage not found%3C/text%3E%3C/svg%3E';">
+                            <div class="image-overlay"></div>
                         </div>
                     </div>
-                    <div class="glass-card p-3 mb-3 d-flex align-items-center">
-                        <i class="fas fa-envelope fa-fw me-3"></i>
-                        <div>
-                            <h4 class="text-light h5 mb-0">Email</h4>
-                            <p class="mb-0">hossainmdnayeem45@gmail.com</p>
+
+                </div>
+            </div>
+
+        </section><!-- /Hero Section -->
+
+        <!-- About Section -->
+        <section id="about" class="about section">
+
+            <!-- Section Title -->
+            <div class="container section-title">
+                <h2>About</h2>
+                <p>Full-Stack Java Developer specializing in scalable enterprise applications</p>
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
+                        <div class="profile-image-wrapper">
+                            <div class="profile-image">
+                                <img src="assets/Md_Nayeem_Hossain_Java_Developer_pp.png" alt="Md Nayeem Hossain"
+                                    class="img-fluid" loading="lazy" width="400" height="400"
+                                    onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'%3E%3Crect width=\'400\' height=\'400\' fill=\'%23ddd\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EImage not found%3C/text%3E%3C/svg%3E';">
+                            </div>
                         </div>
                     </div>
-                    <div class="glass-card p-3 mb-3 d-flex align-items-center">
-                        <i class="fas fa-map-marker-alt fa-fw me-3"></i>
-                        <div>
-                            <h4 class="text-light h5 mb-0">Location</h4>
-                            <p class="mb-0">Dhaka, Bangladesh</p>
+
+                    <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
+                        <div class="about-content">
+                            <div class="intro">
+                                <h2>Hi, I'm Md Nayeem Hossain - a Full-Stack Java Developer</h2>
+                                <p>Full-stack Java Developer with <strong>1+ years of experience</strong> in building
+                                    scalable enterprise applications using <strong>Spring Boot, Angular, and
+                                        microservices architecture</strong>. Proven ability to develop and optimize
+                                    healthcare and HRMS platforms, with expertise in <strong>REST APIs,
+                                        containerization, and AI integration</strong>.</p>
+                            </div>
+
+                            <div class="skills-grid">
+                                <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-leaf"></i>
+                                    </div>
+                                    <h4>Backend Development</h4>
+                                    <p>Spring Boot, Microservices, REST APIs</p>
+                                </div>
+                                <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-angular"></i>
+                                    </div>
+                                    <h4>Frontend Development</h4>
+                                    <p>Angular, TypeScript, Responsive Design</p>
+                                </div>
+                                <div class="skill-item" data-aos="zoom-in" data-aos-delay="450">
+                                    <div class="skill-icon">
+                                        <i class="bi bi-shield-check"></i>
+                                    </div>
+                                    <h4>Security</h4>
+                                    <p>JWT, OAuth 2.0, Enterprise Security</p>
+                                </div>
+                            </div>
+
+                            <div class="journey-timeline" data-aos="fade-up" data-aos-delay="300">
+                                <div class="timeline-item">
+                                    <div class="year">2019</div>
+                                    <div class="description">Graduated with B.Sc. from University of Dhaka</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="year">2024</div>
+                                    <div class="description">Completed Diploma in Enterprise Systems Analysis & Design
+                                        (Java EE)</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="year">2025</div>
+                                    <div class="description">Working as Junior Software Engineer at eGeneration PLC
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cta-section" data-aos="fade-up" data-aos-delay="400">
+                                <div class="fun-fact">
+                                    <span class="text">Java enthusiast based in Dhaka, Bangladesh</span>
+                                </div>
+                                <div class="action-buttons">
+                                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                                    <a href="assets/Md_Nayeem_Hossain_Java_Developer_CV.pdf"
+                                        download="Md_Nayeem_Hossain_Java_Developer_CV.pdf"
+                                        class="btn btn-outline">Download Resume</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="container">
-            <div class="social-links mb-3">
-                <a href="https://linkedin.com/in/mdnayeem1" target="_blank" aria-label="LinkedIn"
-                    title="Connect on LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/md-nym" target="_blank" aria-label="GitHub" title="View GitHub Profile">
-                    <i class="fab fa-github"></i>
-                </a>
+        </section><!-- /About Section -->
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section">
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="skills-grid">
+                            <div class="row g-4">
+                                <div class="col-md-6" data-aos="flip-left" data-aos-delay="200">
+                                    <div class="skill-card">
+                                        <div class="skill-header">
+                                            <i class="fas fa-code"></i>
+                                            <h3>Languages</h3>
+                                        </div>
+                                        <div class="skills-animation">
+                                            <div class="skill-item">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">Java</span>
+                                                    <span class="skill-percentage">90%</span>
+                                                </div>
+                                                <div class="skill-bar progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="90"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="skill-item">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">TypeScript</span>
+                                                    <span class="skill-percentage">80%</span>
+                                                </div>
+                                                <div class="skill-bar progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="80"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="skill-item">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">JavaScript</span>
+                                                    <span class="skill-percentage">85%</span>
+                                                </div>
+                                                <div class="skill-bar progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="85"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- End Languages Card -->
+                                </div>
+
+                                <div class="col-md-6" data-aos="flip-left" data-aos-delay="300">
+                                    <div class="skill-card">
+                                        <div class="skill-header">
+                                            <i class="fas fa-layer-group"></i>
+                                            <h3>Frameworks</h3>
+                                        </div>
+                                        <div class="skills-animation">
+                                            <div class="skill-item">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">Spring Boot</span>
+                                                    <span class="skill-percentage">88%</span>
+                                                </div>
+                                                <div class="skill-bar progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="88"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="skill-item">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">Angular</span>
+                                                    <span class="skill-percentage">75%</span>
+                                                </div>
+                                                <div class="skill-bar progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="75"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="skill-item">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">Hibernate</span>
+                                                    <span class="skill-percentage">82%</span>
+                                                </div>
+                                                <div class="skill-bar progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="82"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- End Frameworks Card -->
+                                </div>
+
+                                <div class="col-md-6" data-aos="flip-left" data-aos-delay="400">
+                                    <div class="skill-card">
+                                        <div class="skill-header">
+                                            <i class="fas fa-tools"></i>
+                                            <h3>Tools & Platforms</h3>
+                                        </div>
+                                        <div class="skills-animation">
+                                            <div class="skill-item">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">PostgreSQL</span>
+                                                    <span class="skill-percentage">85%</span>
+                                                </div>
+                                                <div class="skill-bar progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="85"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="skill-item">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">Docker</span>
+                                                    <span class="skill-percentage">70%</span>
+                                                </div>
+                                                <div class="skill-bar progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="skill-item">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">Git</span>
+                                                    <span class="skill-percentage">90%</span>
+                                                </div>
+                                                <div class="skill-bar progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="90"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- End Tools Card -->
+                                </div>
+
+                                <div class="col-md-6" data-aos="flip-left" data-aos-delay="500">
+                                    <div class="skill-card">
+                                        <div class="skill-header">
+                                            <i class="fas fa-shield-alt"></i>
+                                            <h3>Security & Concepts</h3>
+                                        </div>
+                                        <div class="skills-animation">
+                                            <div class="skill-item">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">JWT</span>
+                                                    <span class="skill-percentage">85%</span>
+                                                </div>
+                                                <div class="skill-bar progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="85"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="skill-item">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">OAuth 2.0</span>
+                                                    <span class="skill-percentage">80%</span>
+                                                </div>
+                                                <div class="skill-bar progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="80"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="skill-item">
+                                                <div class="skill-info">
+                                                    <span class="skill-name">Microservices</span>
+                                                    <span class="skill-percentage">85%</span>
+                                                </div>
+                                                <div class="skill-bar progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="85"
+                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- End Security Card -->
+                                </div>
+                            </div>
+                        </div><!-- End Skills Grid -->
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="skills-summary" data-aos="fade-left" data-aos-delay="200">
+                            <h3>Professional Expertise</h3>
+                            <p>Specializing in building scalable enterprise applications with Spring Boot,
+                                Microservices, Angular, and PostgreSQL. Experience in Healthcare & HRMS platforms.</p>
+
+                            <div class="summary-stats">
+                                <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                                    <div class="stat-circle">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <span class="stat-number">1+</span>
+                                        <span class="stat-label">Years Experience</span>
+                                    </div>
+                                </div>
+
+                                <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+                                    <div class="stat-circle">
+                                        <i class="fas fa-project-diagram"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <span class="stat-number">10+</span>
+                                        <span class="stat-label">Microservices</span>
+                                    </div>
+                                </div>
+
+                                <div class="stat-item" data-aos="zoom-in" data-aos-delay="500">
+                                    <div class="stat-circle">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <span class="stat-number">95%</span>
+                                        <span class="stat-label">On-Time Delivery</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skills-badges" data-aos="fade-up" data-aos-delay="600">
+                                <h4>Certifications</h4>
+                                <div class="badge-list">
+                                    <div class="skill-badge">Java Enterprise Edition</div>
+                                    <div class="skill-badge">Spring Boot Developer</div>
+                                    <div class="skill-badge">Microservices Architecture</div>
+                                    <div class="skill-badge">Web & Mobile App Development</div>
+                                </div>
+                            </div>
+                        </div><!-- End Skills Summary -->
+                    </div>
+                </div>
+
             </div>
-            <p>&copy; Copyright <span id="currentYear"></span>, Md Nayeem Hossain. All Rights Reserved.</p>
-            <p class="text-sm mt-2">Crafted with precision for the tech industry.</p>
+
+        </section><!-- /Skills Section -->
+
+        <!-- Resume Section -->
+        <section id="resume" class="resume section">
+
+            <!-- Section Title -->
+            <div class="container section-title">
+                <h2>Resume</h2>
+                <p>Professional Journey & Academic Excellence</p>
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
+                        <div class="experience-section">
+                            <div class="section-header">
+                                <h2><i class="bi bi-briefcase"></i> Professional Journey</h2>
+                                <p class="section-subtitle">Building scalable enterprise applications with Spring Boot
+                                    and Microservices</p>
+                            </div>
+
+                            <div class="experience-cards">
+                                <div class="experience-card" data-aos="zoom-in" data-aos-delay="300">
+                                    <div class="card-header">
+                                        <div class="role-info">
+                                            <h3>Junior Software Engineer</h3>
+                                            <h4>eGeneration PLC</h4>
+                                        </div>
+                                        <span class="duration">Feb 2025 – Present</span>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Developing and maintaining microservices for eG-Health, eG-Accounting and
+                                            eG-HRMS platform using Spring Boot.</p>
+                                        <ul class="achievements">
+                                            <li>Developed and maintained <strong>10+ microservices</strong> using Spring
+                                                Boot, reducing deployment time by <strong>40%</strong></li>
+                                            <li>Implemented <strong>JWT and OAuth 2.0 authentication</strong> for 2
+                                                enterprise applications</li>
+                                            <li>Participated in <strong>Agile/Scrum</strong> ceremonies using Jira,
+                                                contributing to <strong>95% on-time delivery</strong></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="experience-card" data-aos="zoom-in" data-aos-delay="400">
+                                    <div class="card-header">
+                                        <div class="role-info">
+                                            <h3>Java Developer Intern</h3>
+                                            <h4>eGeneration PLC</h4>
+                                        </div>
+                                        <span class="duration">Nov 2024 – Jan 2025</span>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>Developed REST APIs for healthcare platform using Spring Boot and Hibernate.
+                                        </p>
+                                        <ul class="achievements">
+                                            <li>Developed <strong>15+ REST APIs</strong> for healthcare platform
+                                                supporting CRUD operations and business logic</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                        <div class="education-section">
+                            <div class="section-header">
+                                <h2><i class="bi bi-mortarboard"></i> Academic Excellence</h2>
+                                <p class="section-subtitle">Education and certifications in enterprise software
+                                    development</p>
+                            </div>
+
+                            <div class="education-timeline">
+                                <div class="timeline-track"></div>
+
+                                <div class="education-item" data-aos="slide-up" data-aos-delay="300">
+                                    <div class="timeline-marker"></div>
+                                    <div class="education-content">
+                                        <div class="degree-header">
+                                            <h3>Diploma in Enterprise Systems Analysis & Design</h3>
+                                            <span class="year">Nov 2023 – Oct 2024</span>
+                                        </div>
+                                        <h4 class="institution">IsDB-BISEW IT Scholarship Programme</h4>
+                                        <p>Specialized in Java EE, Spring Framework, and enterprise application
+                                            development</p>
+                                    </div>
+                                </div>
+
+                                <div class="education-item" data-aos="slide-up" data-aos-delay="400">
+                                    <div class="timeline-marker"></div>
+                                    <div class="education-content">
+                                        <div class="degree-header">
+                                            <h3>Bachelor of Science</h3>
+                                            <span class="year">Aug 2014 – May 2019</span>
+                                        </div>
+                                        <h4 class="institution">University of Dhaka</h4>
+                                        <p>Dhaka, Bangladesh</p>
+                                    </div>
+                                </div>
+
+                                <div class="education-item" data-aos="slide-up" data-aos-delay="500">
+                                    <div class="timeline-marker"></div>
+                                    <div class="education-content">
+                                        <div class="degree-header">
+                                            <h3>Web and Mobile App Development</h3>
+                                            <span class="year">2024</span>
+                                        </div>
+                                        <h4 class="institution">IsDB-BISEW</h4>
+                                        <p>Web and Mobile App Development using Spring Boot, Android and Flutter</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section><!-- /Resume Section -->
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio section">
+
+            <!-- Section Title -->
+            <div class="container section-title">
+                <h2>Portfolio</h2>
+                <p>Projects showcasing my expertise in enterprise application development</p>
+            </div><!-- End Section Title -->
+
+            <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+                    <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
+                        <li data-filter="*" class="filter-active">
+                            <i class="fas fa-th"></i> All Projects
+                        </li>
+                        <li data-filter=".filter-development">
+                            <i class="fas fa-code"></i> Development
+                        </li>
+                        <li data-filter=".filter-enterprise">
+                            <i class="fas fa-building"></i> Enterprise
+                        </li>
+                    </ul>
+
+                    <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+
+                        <div
+                            class="col-xl-4 col-lg-6 col-md-6 portfolio-item isotope-item filter-development filter-enterprise">
+                            <article class="portfolio-entry">
+                                <figure class="entry-image project-bg-1">
+                                    <div class="entry-overlay">
+                                        <div class="overlay-content">
+                                            <div class="entry-meta">
+                                                <span class="badge bg-primary">Full-Stack</span>
+                                                <span class="badge bg-success">Java</span>
+                                            </div>
+                                            <h3 class="entry-title">Payroll Management System</h3>
+                                            <p class="entry-description">Comprehensive payroll management system with
+                                                employee data management, payroll processing, and benefits
+                                                administration features.</p>
+                                            <div class="entry-tech">
+                                                <span class="tech-badge"><i class="fab fa-java"></i> Spring Boot</span>
+                                                <span class="tech-badge"><i class="fab fa-angular"></i> Angular</span>
+                                                <span class="tech-badge"><i class="fas fa-database"></i>
+                                                    PostgreSQL</span>
+                                            </div>
+                                            <div class="entry-links">
+                                                <a href="https://github.com/MD-NYM/Payroll_Management_System_Final"
+                                                    target="_blank" rel="noopener noreferrer"
+                                                    aria-label="View Payroll Management System on GitHub"
+                                                    title="View on GitHub">
+                                                    <i class="fab fa-github"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+                            </article>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item isotope-item filter-enterprise">
+                            <article class="portfolio-entry">
+                                <figure class="entry-image project-bg-2">
+                                    <div class="entry-overlay">
+                                        <div class="overlay-content">
+                                            <div class="entry-meta">
+                                                <span class="badge bg-danger">Enterprise</span>
+                                                <span class="badge bg-info">Microservices</span>
+                                            </div>
+                                            <h3 class="entry-title">eG-Health Platform</h3>
+                                            <p class="entry-description">Healthcare management platform with
+                                                microservices architecture. Developed REST APIs and authentication
+                                                systems for patient management and medical records.</p>
+                                            <div class="entry-tech">
+                                                <span class="tech-badge"><i class="fab fa-java"></i> Spring Boot</span>
+                                                <span class="tech-badge"><i class="fas fa-shield-alt"></i> JWT</span>
+                                                <span class="tech-badge"><i class="fas fa-database"></i>
+                                                    PostgreSQL</span>
+                                            </div>
+                                            <div class="entry-links">
+                                                <span class="project-link-disabled" 
+                                                      title="Project details coming soon"
+                                                      aria-label="eG-Health Platform project details coming soon">
+                                                    <i class="fas fa-expand"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+                            </article>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item isotope-item filter-enterprise">
+                            <article class="portfolio-entry">
+                                <figure class="entry-image project-bg-3">
+                                    <div class="entry-overlay">
+                                        <div class="overlay-content">
+                                            <div class="entry-meta">
+                                                <span class="badge bg-warning">Enterprise</span>
+                                                <span class="badge bg-primary">HRMS</span>
+                                            </div>
+                                            <h3 class="entry-title">eG-HRMS Platform</h3>
+                                            <p class="entry-description">Human Resource Management System with
+                                                microservices architecture. Features include employee management,
+                                                attendance tracking, and payroll integration.</p>
+                                            <div class="entry-tech">
+                                                <span class="tech-badge"><i class="fab fa-java"></i> Spring Boot</span>
+                                                <span class="tech-badge"><i class="fas fa-shield-alt"></i> OAuth
+                                                    2.0</span>
+                                                <span class="tech-badge"><i class="fas fa-project-diagram"></i>
+                                                    Microservices</span>
+                                            </div>
+                                            <div class="entry-links">
+                                                <span class="project-link-disabled" 
+                                                      title="Project details coming soon"
+                                                      aria-label="eG-HRMS Platform project details coming soon">
+                                                    <i class="fas fa-expand"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+                            </article>
+                        </div><!-- End Portfolio Item -->
+
+                        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item isotope-item filter-enterprise">
+                            <article class="portfolio-entry">
+                                <figure class="entry-image project-bg-4">
+                                    <div class="entry-overlay">
+                                        <div class="overlay-content">
+                                            <div class="entry-meta">
+                                                <span class="badge bg-success">Enterprise</span>
+                                                <span class="badge bg-dark">Accounting</span>
+                                            </div>
+                                            <h3 class="entry-title">eG-Accounting Platform</h3>
+                                            <p class="entry-description">Enterprise accounting platform with
+                                                microservices architecture. Developed financial management modules and
+                                                integrated with other enterprise systems.</p>
+                                            <div class="entry-tech">
+                                                <span class="tech-badge"><i class="fab fa-java"></i> Spring Boot</span>
+                                                <span class="tech-badge"><i class="fas fa-project-diagram"></i>
+                                                    Microservices</span>
+                                                <span class="tech-badge"><i class="fas fa-database"></i>
+                                                    PostgreSQL</span>
+                                            </div>
+                                            <div class="entry-links">
+                                                <span class="project-link-disabled" 
+                                                      title="Project details coming soon"
+                                                      aria-label="eG-Accounting Platform project details coming soon">
+                                                    <i class="fas fa-expand"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figure>
+                            </article>
+                        </div><!-- End Portfolio Item -->
+
+                    </div><!-- End Portfolio Container -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Portfolio Section -->
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section light-background">
+
+            <!-- Section Title -->
+            <div class="container section-title">
+                <h2>Contact</h2>
+                <p>Get in touch with me for opportunities and collaborations</p>
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10">
+                        <div class="info-box text-center" data-aos="fade-up" data-aos-delay="200">
+                            <h3>Contact Info</h3>
+                            <p>Feel free to reach out for any opportunities or collaborations in enterprise software
+                                development.</p>
+
+                            <div class="row g-4 mt-4">
+                                <div class="col-md-4">
+                                    <div class="info-item" data-aos="fade-up" data-aos-delay="300">
+                                        <div class="icon-box">
+                                            <i class="bi bi-geo-alt"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4>Location</h4>
+                                            <p>Dhaka, Bangladesh</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="info-item" data-aos="fade-up" data-aos-delay="400">
+                                        <div class="icon-box">
+                                            <i class="bi bi-telephone"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4>Phone Number</h4>
+                                            <p><a href="tel:+8801515666542">+88 01515 666 542</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="info-item" data-aos="fade-up" data-aos-delay="500">
+                                        <div class="icon-box">
+                                            <i class="bi bi-envelope"></i>
+                                        </div>
+                                        <div class="content">
+                                            <h4>Email Address</h4>
+                                            <p><a
+                                                    href="mailto:hossainmdnayeem45@gmail.com">hossainmdnayeem45@gmail.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section><!-- /Contact Section -->
+
+    </main>
+
+    <footer id="footer" class="footer dark-background">
+
+        <div class="container">
+            <div class="copyright text-center">
+                <p>© <span>Copyright</span> <strong class="px-1">Md Nayeem Hossain</strong> <span
+                        id="copyright-year"></span> <span>All Rights
+                        Reserved</span></p>
+            </div>
+            <div class="social-links d-flex justify-content-center">
+                <a href="https://linkedin.com/in/mdnayeem1" target="_blank" rel="noopener noreferrer"
+                    aria-label="Visit Md Nayeem Hossain's LinkedIn profile"><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/md-nym" target="_blank" rel="noopener noreferrer"
+                    aria-label="Visit Md Nayeem Hossain's GitHub profile"><i class="bi bi-github"></i></a>
+            </div>
+            <div class="credits">
+                <p>Crafted with precision for the tech industry.</p>
+            </div>
         </div>
+
     </footer>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
+        aria-label="Scroll to top"><i class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Custom JavaScript for Animations -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // --- Set Current Year in Footer ---
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/vendor/aos/aos.js" defer></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+    <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
 
-            // --- Navbar scroll effect ---
-            const nav = document.querySelector('.navbar');
-            if (nav) {
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 50) {
-                        nav.classList.add('scrolled');
-                    } else {
-                        nav.classList.remove('scrolled');
-                    }
-                });
-            }
+    <!-- Main JS File -->
+    <script src="assets/js/main.js" defer></script>
 
-            // --- Typing effect for subtitle ---
-            const subtitleElement = document.getElementById('typing-subtitle');
-            if (subtitleElement) {
-                const text = "Full-Stack Java Developer | Spring Boot • Microservices • REST APIs";
-                let index = 0;
-                subtitleElement.innerHTML = '<span class="cursor">&nbsp;</span>';
+    <!-- Additional Scripts -->
+    <script src="assets/js/additional.js" defer></script>
 
-                function type() {
-                    if (index < text.length) {
-                        subtitleElement.innerHTML = text.substring(0, index + 1) + '<span class="cursor">&nbsp;</span>';
-                        index++;
-                        setTimeout(type, 100);
-                    } else {
-                        subtitleElement.querySelector('.cursor').style.animation = 'blink 1s infinite';
-                    }
-                }
-                setTimeout(type, 500);
-            }
-
-            // --- Scroll reveal animation ---
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('active');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-            } else {
-                document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
-            }
-        });
-    </script>
 </body>
 
 </html>
