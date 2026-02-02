@@ -133,11 +133,13 @@
   });
 
   /**
-   * Initiate glightbox
+   * Initiate glightbox (only if GLightbox is available)
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined') {
+    const glightbox = GLightbox({
+      selector: '.glightbox'
+    });
+  }
 
   /**
    * Init isotope layout and filters

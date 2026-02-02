@@ -90,8 +90,13 @@ body {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .loader-text {
@@ -504,11 +509,11 @@ footer {
     #home h1 {
         font-size: 2.5rem;
     }
-    
+
     #home .typing-text {
         font-size: 1.2rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
@@ -886,15 +891,15 @@ button:focus {
     .entry-image {
         height: 250px;
     }
-    
+
     .entry-title {
         font-size: 1.25rem;
     }
-    
+
     .entry-description {
         font-size: 0.85rem;
     }
-    
+
     .portfolio-filters li {
         padding: 8px 18px;
         font-size: 0.9rem;
@@ -925,7 +930,7 @@ button:focus {
     .contact .info-item {
         margin-bottom: 2rem;
     }
-    
+
     .contact .info-item:last-child {
         margin-bottom: 0;
     }
@@ -949,4 +954,265 @@ button:focus {
 .project-link-disabled:hover {
     opacity: 0.5;
     transform: none;
+}
+
+/* --- Interests & Languages Sections - Matching Project Style --- */
+.interests-section,
+.languages-section {
+    margin: 0;
+    padding: 25px;
+    background: color-mix(in srgb, var(--accent-color), transparent 94%);
+    border-radius: 20px;
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.interests-section:hover,
+.languages-section:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.section-header-modern {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+}
+
+.section-header-modern i {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.section-header-modern:hover i {
+    transform: scale(1.1);
+}
+
+.section-header-modern h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+}
+
+/* --- Interests List - Simple Style --- */
+.interests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.interest-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    color: var(--default-color);
+    font-size: 15px;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+.interest-item i {
+    font-size: 1rem;
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.interest-item:hover {
+    color: var(--heading-color);
+}
+
+.interest-item:hover i {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.interest-item span {
+    color: inherit;
+}
+
+/* --- Languages List - Matching Project Style --- */
+.languages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.language-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 18px;
+    background: var(--surface-color);
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 70%);
+    transition: all 0.3s ease;
+}
+
+.language-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--accent-color), transparent 85%);
+}
+
+.language-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in srgb, var(--accent-color), transparent 90%);
+    border-radius: 10px;
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.language-item:hover .language-icon {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.language-icon i {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.language-item:hover .language-icon i {
+    color: var(--contrast-color);
+}
+
+.language-content {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.language-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+    transition: all 0.3s ease;
+}
+
+.language-item:hover .language-name {
+    color: var(--accent-color);
+}
+
+.language-level {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: color-mix(in srgb, var(--accent-color), transparent 90%);
+    color: var(--accent-color);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+    transition: all 0.3s ease;
+}
+
+.language-level i {
+    font-size: 0.75rem;
+}
+
+.language-level.native {
+    background: linear-gradient(45deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 20%));
+    color: var(--contrast-color);
+    border-color: var(--accent-color);
+}
+
+.language-level.native i {
+    color: var(--contrast-color);
+}
+
+.language-item:hover .language-level {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    border-color: var(--accent-color);
+}
+
+.language-item:hover .language-level.native {
+    background: color-mix(in srgb, var(--accent-color), black 10%);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+
+    .interests-section,
+    .languages-section {
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    .section-header-modern h4 {
+        font-size: 16px;
+    }
+
+    .interest-item {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    .language-item {
+        padding: 12px 15px;
+    }
+
+    .language-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .language-icon i {
+        font-size: 1rem;
+    }
+
+    .language-name {
+        font-size: 14px;
+    }
+
+    .language-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .language-name {
+        font-size: 14px;
+    }
+
+    .language-level {
+        font-size: 11px;
+        padding: 5px 10px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 576px) {
+    .interests-list {
+        gap: 10px;
+    }
+
+    .interest-item {
+        font-size: 14px;
+        padding: 8px 0;
+    }
 }
