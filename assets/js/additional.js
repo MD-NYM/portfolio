@@ -2,7 +2,6 @@
  * Additional Utility Scripts
  * - Dynamic Copyright Year
  * - Image Error Handling
- * - Navigation Active State Enhancement
  */
 
 (function () {
@@ -35,53 +34,39 @@
         });
     }
 
-    // Navigation Active State Enhancement
-    // Ensures aria-current is set correctly on initial page load with hash links
-    function initNavigationActiveState() {
-        // Wait for scrollspy to initialize, then set initial state
-        setTimeout(function () {
-            const currentHash = window.location.hash;
-            const navLinks = document.querySelectorAll('.navmenu a[href^="#"]');
-            const logoLink = document.querySelector('.navmenu .logo');
+    // Portfolio Filters — keyboard accessibility + aria-selected sync
+    function initPortfolioFilterA11y() {
+        const filters = document.querySelectorAll('.portfolio-filters li[role="tab"]');
+        if (!filters.length) return;
 
-            if (currentHash) {
-                // Find and set aria-current for hash link
-                const activeLink = document.querySelector(`.navmenu a[href="${currentHash}"]`);
-                if (activeLink) {
-                    // Remove aria-current from logo if hash link exists
-                    if (logoLink) {
-                        logoLink.removeAttribute('aria-current');
-                    }
-                    // Set aria-current on the active section link
-                    activeLink.setAttribute('aria-current', 'true');
-                    activeLink.classList.add('active');
+        filters.forEach(function (filter) {
+            // Keyboard activation: Enter or Space triggers click
+            filter.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    filter.click();
                 }
-            } else {
-                // If no hash and at top of page, ensure logo has aria-current
-                if (logoLink && window.scrollY < 200) {
-                    logoLink.setAttribute('aria-current', 'page');
-                    // Remove aria-current from any section links
-                    navLinks.forEach(function (link) {
-                        link.removeAttribute('aria-current');
-                        link.classList.remove('active');
-                    });
-                }
-            }
-        }, 100);
+            });
+
+            // Keep aria-selected in sync when user clicks
+            filter.addEventListener('click', function () {
+                filters.forEach(function (f) { f.setAttribute('aria-selected', 'false'); });
+                filter.setAttribute('aria-selected', 'true');
+            });
+        });
     }
 
     // Initialize all functions when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function () {
-            initCopyrightYear();
-            initImageErrorHandling();
-            initNavigationActiveState();
-        });
-    } else {
-        // DOM already loaded
+    function runInits() {
         initCopyrightYear();
         initImageErrorHandling();
-        initNavigationActiveState();
+        initPortfolioFilterA11y();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runInits);
+    } else {
+        runInits();
     }
 
 })();

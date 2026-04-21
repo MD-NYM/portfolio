@@ -6,7 +6,7 @@
 * License: https://bootstrapmade.com/license/
 */
 
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -15,6 +15,7 @@
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
+    if (!selectBody || !selectHeader) return;
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
@@ -26,11 +27,14 @@
    * Mobile nav toggle
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+  const mobileNavToggleIcon = mobileNavToggleBtn ? mobileNavToggleBtn.querySelector('i') : null;
 
   function mobileNavToogle() {
     document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
+    if (mobileNavToggleIcon) {
+      mobileNavToggleIcon.classList.toggle('bi-list');
+      mobileNavToggleIcon.classList.toggle('bi-x');
+    }
   }
   if (mobileNavToggleBtn) {
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
@@ -52,7 +56,7 @@
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+    navmenu.addEventListener('click', function (e) {
       e.preventDefault();
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
@@ -70,13 +74,15 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
+  }
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
@@ -85,6 +91,7 @@
    * Animation on scroll function and init
    */
   function aosInit() {
+    if (typeof AOS === 'undefined') return;
     AOS.init({
       duration: 600,
       easing: 'ease-in-out',
@@ -97,7 +104,9 @@
   /**
    * Initiate Pure Counter
    */
-  new PureCounter();
+  if (typeof PureCounter !== 'undefined') {
+    new PureCounter();
+  }
 
   /**
    * Init typed.js
@@ -105,10 +114,13 @@
   const selectTyped = document.querySelector('.typed');
   if (selectTyped) {
     let typed_strings = selectTyped.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
+    typed_strings = typed_strings.split(',').map((item) => item.trim());
     new Typed('.typed', {
       strings: typed_strings,
+      contentType: 'null',
       loop: true,
+      startDelay: 250,
+      smartBackspace: true,
       typeSpeed: 100,
       backSpeed: 50,
       backDelay: 2000
@@ -123,7 +135,7 @@
     new Waypoint({
       element: item,
       offset: '80%',
-      handler: function(direction) {
+      handler: function (direction) {
         let progress = item.querySelectorAll('.progress .progress-bar');
         progress.forEach(el => {
           el.style.width = el.getAttribute('aria-valuenow') + '%';
@@ -136,7 +148,7 @@
    * Initiate glightbox (only if GLightbox is available)
    */
   if (typeof GLightbox !== 'undefined') {
-    const glightbox = GLightbox({
+    GLightbox({
       selector: '.glightbox'
     });
   }
@@ -144,14 +156,16 @@
   /**
    * Init isotope layout and filters
    */
-  document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
+  document.querySelectorAll('.isotope-layout').forEach(function (isotopeItem) {
     let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
     let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+    const isotopeContainer = isotopeItem.querySelector('.isotope-container');
+    if (!isotopeContainer || typeof imagesLoaded === 'undefined' || typeof Isotope === 'undefined') return;
 
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+    imagesLoaded(isotopeContainer, function () {
+      initIsotope = new Isotope(isotopeContainer, {
         itemSelector: '.isotope-item',
         layoutMode: layout,
         filter: filter,
@@ -159,10 +173,14 @@
       });
     });
 
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function(filters) {
-      filters.addEventListener('click', function() {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
+      filters.addEventListener('click', function () {
+        const activeFilter = isotopeItem.querySelector('.isotope-filters .filter-active');
+        if (activeFilter) {
+          activeFilter.classList.remove('filter-active');
+        }
         this.classList.add('filter-active');
+        if (!initIsotope) return;
         initIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
@@ -178,10 +196,16 @@
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
+    if (typeof Swiper === 'undefined') return;
+    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
+      const configElement = swiperElement.querySelector(".swiper-config");
+      if (!configElement) return;
+      let config;
+      try {
+        config = JSON.parse(configElement.innerHTML.trim());
+      } catch (error) {
+        return;
+      }
 
       if (swiperElement.classList.contains("swiper-tab")) {
         initSwiperWithCustomPagination(swiperElement, config);
@@ -205,7 +229,7 @@
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
-  window.addEventListener('load', function(e) {
+  window.addEventListener('load', function (e) {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
@@ -237,7 +261,7 @@
 
   function navmenuScrollspy() {
     let activeFound = false;
-    
+
     navmenulinks.forEach(navmenulink => {
       if (!navmenulink.hash) return;
       let section = document.querySelector(navmenulink.hash);
@@ -258,7 +282,7 @@
         navmenulink.removeAttribute('aria-current');
       }
     });
-    
+
     // If no section is active (at top of page), set logo link as current page
     if (!activeFound && logoLink && window.scrollY < 200) {
       logoLink.setAttribute('aria-current', 'page');
