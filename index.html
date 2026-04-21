@@ -37,6 +37,16 @@
         })();
     </script>
 
+    <!-- Preloader styles (loaded first so the overlay is styled on initial paint). -->
+    <link href="assets/css/preloader.css" rel="stylesheet">
+
+    <!-- Lock scroll immediately while the document is still parsing. -->
+    <script>document.documentElement.classList.add('is-loading');</script>
+
+    <!-- Preloader controller. `defer` runs it after HTML parse,
+         before DOMContentLoaded — the preloader element is in the DOM by then. -->
+    <script src="assets/js/preloader.js" defer></script>
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Md Nayeem Hossain | Full-Stack Java Developer">
@@ -189,6 +199,22 @@
 </head>
 
 <body class="index-page">
+
+    <!-- Page Preloader — styles in assets/css/preloader.css, logic in assets/js/preloader.js. -->
+    <div id="preloader" class="preloader" role="status" aria-live="polite"
+        aria-label="Loading portfolio">
+        <div class="preloader__brand" aria-hidden="true">
+            <svg class="preloader__ring" viewBox="0 0 100 100">
+                <circle class="preloader__ring-track" cx="50" cy="50" r="46"></circle>
+                <circle class="preloader__ring-arc"   cx="50" cy="50" r="46"></circle>
+            </svg>
+            <span class="preloader__mono">MN</span>
+        </div>
+        <div class="preloader__name">Md Nayeem Hossain</div>
+        <div class="preloader__bar" aria-hidden="true">
+            <span class="preloader__bar-fill"></span>
+        </div>
+    </div>
 
     <!-- Skip to Main Content Link (Accessibility) -->
     <a href="#main" class="skip-to-main" aria-label="Skip navigation and go to main content">Skip to main content</a>

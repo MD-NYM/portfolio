@@ -1,0 +1,198 @@
+/* ==========================================================================
+   Page Preloader
+   Branded loading overlay shown during initial page load. Loaded early in
+   <head> so the overlay is styled on first paint (prevents FOUC and layout
+   shift). Adapts to the current theme via the [data-theme] attribute that
+   the inline theme bootstrap sets on <html> before any CSS is parsed.
+   ========================================================================== */
+
+/* Lock page scroll while the preloader is visible. */
+html.is-loading,
+html.is-loading body {
+    overflow: hidden !important;
+    /* Keep scrollbar width stable so the layout doesn't jump on hide. */
+    scrollbar-gutter: stable;
+}
+
+/* ------------------------------------------------------------------ */
+/* Full-screen overlay, always on top.                                */
+/* ------------------------------------------------------------------ */
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    background: #0b1220;
+    color: #f9fafb;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 450ms ease, visibility 450ms ease;
+    /* Subtle radial vignette — gives depth without fighting the content. */
+    background-image:
+        radial-gradient(circle at 50% 40%,
+            rgba(0, 174, 255, 0.12) 0%,
+            rgba(0, 174, 255, 0) 55%),
+        linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    /* Respect iOS safe areas on notched devices. */
+    padding: env(safe-area-inset-top) env(safe-area-inset-right)
+        env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+html[data-theme="light"] .preloader {
+    color: #0b2a55;
+    background-image:
+        radial-gradient(circle at 50% 40%,
+            rgba(6, 92, 194, 0.08) 0%,
+            rgba(6, 92, 194, 0) 55%),
+        linear-gradient(180deg, #ffffff 0%, #f3f6fb 100%);
+}
+
+/* ------------------------------------------------------------------ */
+/* Branded monogram — rotating arc ring around the initials "MN".     */
+/* ------------------------------------------------------------------ */
+.preloader__brand {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    display: grid;
+    place-items: center;
+}
+
+.preloader__ring {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    animation: preloader-spin 1.4s linear infinite;
+    /* Soft accent glow around the ring. */
+    filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.35));
+}
+
+html[data-theme="light"] .preloader__ring {
+    filter: drop-shadow(0 0 8px rgba(6, 92, 194, 0.25));
+}
+
+.preloader__ring-track {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.08);
+    stroke-width: 3;
+}
+
+html[data-theme="light"] .preloader__ring-track {
+    stroke: rgba(0, 0, 0, 0.08);
+}
+
+.preloader__ring-arc {
+    fill: none;
+    stroke: #00aeff;
+    stroke-width: 3;
+    stroke-linecap: round;
+    /* Partial arc (~third of the circumference). */
+    stroke-dasharray: 90 220;
+    transform-origin: 50% 50%;
+}
+
+html[data-theme="light"] .preloader__ring-arc {
+    stroke: #065cc2;
+}
+
+@keyframes preloader-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Initials. Uses Quicksand (already loaded by the portfolio) for a
+   rounded, modern wordmark feel. */
+.preloader__mono {
+    position: relative;
+    font-family: "Quicksand", "Open Sans", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.02em;
+    color: #00aeff;
+    text-shadow: 0 0 18px rgba(0, 174, 255, 0.45);
+    animation: preloader-pulse 1.8s ease-in-out infinite;
+}
+
+html[data-theme="light"] .preloader__mono {
+    color: #065cc2;
+    text-shadow: 0 0 14px rgba(6, 92, 194, 0.25);
+}
+
+@keyframes preloader-pulse {
+    0%, 100% { opacity: 0.75; transform: scale(1); }
+    50%      { opacity: 1;    transform: scale(1.06); }
+}
+
+/* ------------------------------------------------------------------ */
+/* Name wordmark.                                                     */
+/* ------------------------------------------------------------------ */
+.preloader__name {
+    font: 600 11px/1 "Open Sans", system-ui, -apple-system, sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+/* ------------------------------------------------------------------ */
+/* Progress bar — actual width is driven by JS.                       */
+/* ------------------------------------------------------------------ */
+.preloader__bar {
+    position: relative;
+    width: 180px;
+    height: 2px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+html[data-theme="light"] .preloader__bar {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.preloader__bar-fill {
+    display: block;
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #00aeff 0%, #00d2ff 100%);
+    box-shadow: 0 0 8px rgba(0, 174, 255, 0.55);
+    transition: width 180ms ease-out;
+}
+
+html[data-theme="light"] .preloader__bar-fill {
+    background: linear-gradient(90deg, #065cc2 0%, #00aeff 100%);
+    box-shadow: 0 0 6px rgba(6, 92, 194, 0.35);
+}
+
+/* ------------------------------------------------------------------ */
+/* Hidden state — fade out + remove from a11y / interaction tree.     */
+/* ------------------------------------------------------------------ */
+.preloader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Responsive tweaks.                                                 */
+/* ------------------------------------------------------------------ */
+@media (max-width: 480px) {
+    .preloader__brand { width: 84px; height: 84px; }
+    .preloader__mono  { font-size: 22px; }
+    .preloader__name  { font-size: 10px; letter-spacing: 0.28em; }
+    .preloader__bar   { width: 150px; }
+}
+
+/* ------------------------------------------------------------------ */
+/* Reduced motion: keep feedback, drop the heavy animation.           */
+/* ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+    .preloader__ring  { animation-duration: 3s; }
+    .preloader__mono  { animation: none; opacity: 1; }
+    .preloader        { transition-duration: 200ms; }
+    .preloader__bar-fill { transition-duration: 80ms; }
+}
