@@ -140,6 +140,17 @@
         progress.forEach(el => {
           el.style.width = el.getAttribute('aria-valuenow') + '%';
         });
+
+        if (item.dataset.countersStarted !== 'true') {
+          const skillCounters = item.querySelectorAll('.skill-purecounter');
+          skillCounters.forEach((counter) => counter.classList.add('purecounter'));
+          if (skillCounters.length && typeof PureCounter !== 'undefined') {
+            new PureCounter();
+          }
+          item.dataset.countersStarted = 'true';
+        }
+
+        this.destroy();
       }
     });
   });
