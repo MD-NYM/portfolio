@@ -123,7 +123,7 @@ h6 {
   margin-right: 8px;
 }
 
-.header .logo h1 {
+.header .logo .sitename {
   font-size: 30px;
   margin: 0;
   font-weight: 700;
@@ -179,7 +179,7 @@ h6 {
   margin-right: 8px;
 }
 
-.navmenu .logo h1 {
+.navmenu .logo .sitename {
   font-size: 24px;
   margin: 0;
   font-weight: 700;

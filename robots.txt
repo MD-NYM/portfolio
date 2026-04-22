@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://md-nym.github.io/portfolio/sitemap.xml
