@@ -1,0 +1,16 @@
+# Editor / IDE
+.idea/
+.vscode/
+
+# Node tooling (used for one-off image generation and CSS minification only)
+node_modules/
+package.json
+package-lock.json
+
+# Lighthouse output
+lh-*.json
+lh-*.html
+
+# OS
+Thumbs.db
+.DS_Store

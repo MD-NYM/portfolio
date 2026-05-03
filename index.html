@@ -54,7 +54,7 @@
     <meta property="og:description"
         content="Dhaka-based full-stack Java developer: Spring Boot 3.x microservices, Angular, PostgreSQL, Docker. Healthcare &amp; HRMS with OAuth 2.0, JWT, and secure REST APIs.">
     <meta property="og:image"
-        content="https://md-nym.github.io/portfolio/assets/Md_Nayeem_Hossain_Java_Developer_bg.png">
+        content="https://md-nym.github.io/portfolio/assets/img/profile-1296.png">
     <meta property="og:image:alt"
         content="Md Nayeem Hossain — Java, Spring Boot &amp; Angular developer, Dhaka, Bangladesh">
     <meta property="og:url" content="https://md-nym.github.io/portfolio">
@@ -65,17 +65,20 @@
     <meta name="twitter:description"
         content="Dhaka-based full-stack Java developer: Spring Boot 3.x microservices, Angular, PostgreSQL, Docker. Healthcare &amp; HRMS with OAuth 2.0, JWT, and secure REST APIs.">
     <meta name="twitter:image"
-        content="https://md-nym.github.io/portfolio/assets/Md_Nayeem_Hossain_Java_Developer_bg.png">
+        content="https://md-nym.github.io/portfolio/assets/img/profile-1296.png">
     <meta name="twitter:image:alt"
         content="Md Nayeem Hossain — Java, Spring Boot &amp; Angular developer, Dhaka, Bangladesh">
 
-    <!-- Favicons -->
-    <link href="assets/Md_Nayeem_Hossain_Java_Developer_icon.ico" rel="icon">
-    <link href="assets/Md_Nayeem_Hossain_Java_Developer_icon.ico" rel="apple-touch-icon">
+    <!-- Favicons (PNG assets ship in-repo; iOS uses apple-touch-icon) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/profile-150.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
 
-    <!-- Preload hero image so it's ready for LCP. CSS files are loaded
-         synchronously below, so preloading them would be redundant. -->
-    <link rel="preload" href="assets/Md_Nayeem_Hossain_Java_Developer_bg.png" as="image" fetchpriority="high">
+    <!-- Preload responsive hero image so it's ready for LCP. WebP variants
+         cover ~99% of browsers; the PNG fallback is fetched only when WebP
+         is unsupported, via the <picture> element below. -->
+    <link rel="preload" as="image" href="assets/img/profile-1296.webp"
+        imagesrcset="assets/img/profile-800.webp 800w, assets/img/profile-1296.webp 1296w, assets/img/profile-1600.webp 1600w"
+        imagesizes="(max-width: 991px) 90vw, 648px" fetchpriority="high">
 
     <!-- Fonts -->
     <!-- Optimized: trimmed italic variants and unused weights for smaller font payload. display=swap keeps text visible during load -->
@@ -87,10 +90,16 @@
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- AOS animations and Font Awesome aren't needed for first paint;
+         load them non-blocking via the print/onload swap pattern. -->
+    <link rel="stylesheet" href="assets/vendor/aos/aos.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="assets/vendor/aos/aos.css">
+        <link rel="stylesheet" href="assets/css/all.min.css">
+    </noscript>
+
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
     <!-- Custom Styles -->
@@ -130,15 +139,13 @@
               "@id": "https://md-nym.github.io/portfolio/#person",
               "name": "Md Nayeem Hossain",
               "jobTitle": "Full-Stack Java Developer",
-              "image": "https://md-nym.github.io/portfolio/assets/Md_Nayeem_Hossain_Java_Developer_bg.png",
+              "image": "https://md-nym.github.io/portfolio/assets/img/profile-1296.png",
               "url": "https://md-nym.github.io/portfolio",
               "mainEntityOfPage": { "@id": "https://md-nym.github.io/portfolio/#webpage" },
               "sameAs": [
                   "https://www.linkedin.com/in/mdnayeem1",
                   "https://github.com/md-nym"
               ],
-              "email": "hossainmdnayeem45@gmail.com",
-              "telephone": "+8801515666542",
               "address": {
                   "@type": "PostalAddress",
                   "addressLocality": "Dhaka",
@@ -230,7 +237,7 @@
   </script>
 </head>
 
-<body class="index-page">
+<body id="top" class="index-page">
 
     <!-- Page Preloader — styles in assets/css/preloader.css, logic in assets/js/preloader.js. -->
     <div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="Loading portfolio">
@@ -265,9 +272,13 @@
 
                 <div class="nav-profile">
                     <div class="profile-img">
-                        <img src="assets/Md_Nayeem_Hossain_Java_Developer_bg.png" alt="Md Nayeem Hossain"
-                            class="img-fluid rounded-circle" width="150" height="150"
-                            onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ddd\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EImage not found%3C/text%3E%3C/svg%3E';">
+                        <picture>
+                            <source type="image/webp"
+                                srcset="assets/img/profile-150.webp 1x, assets/img/profile-300.webp 2x">
+                            <img src="assets/img/profile-150.png" alt="Md Nayeem Hossain"
+                                class="img-fluid rounded-circle" width="150" height="150"
+                                onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ddd\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EImage not found%3C/text%3E%3C/svg%3E';">
+                        </picture>
                         <span class="profile-status-dot" aria-hidden="true"></span>
                     </div>
 
@@ -442,10 +453,16 @@
                                     <span class="floating-label">AI + RAG</span>
                                 </article>
                             </div>
-                            <img src="assets/Md_Nayeem_Hossain_Java_Developer_bg.png"
-                                alt="Md Nayeem Hossain - Full-Stack Java Developer" class="img-fluid hero-main-image"
-                                width="800" height="600" fetchpriority="high" decoding="async"
-                                onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'600\'%3E%3Crect width=\'800\' height=\'600\' fill=\'%23ddd\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EImage not found%3C/text%3E%3C/svg%3E';">
+                            <picture>
+                                <source type="image/webp"
+                                    srcset="assets/img/profile-800.webp 800w, assets/img/profile-1296.webp 1296w, assets/img/profile-1600.webp 1600w"
+                                    sizes="(max-width: 991px) 90vw, 648px">
+                                <img src="assets/img/profile-1296.png"
+                                    alt="Md Nayeem Hossain - Full-Stack Java Developer"
+                                    class="img-fluid hero-main-image" width="800" height="600" fetchpriority="high"
+                                    decoding="async"
+                                    onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'600\'%3E%3Crect width=\'800\' height=\'600\' fill=\'%23ddd\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EImage not found%3C/text%3E%3C/svg%3E';">
+                            </picture>
                             <div class="image-overlay" aria-hidden="true"></div>
                         </div>
                     </div>
@@ -471,9 +488,13 @@
                     <div class="col-lg-5" data-aos="fade-right" data-aos-delay="200">
                         <div class="profile-image-wrapper">
                             <div class="profile-image">
-                                <img src="assets/Md_Nayeem_Hossain_Java_Developer_bg.png" alt="Md Nayeem Hossain"
-                                    class="img-fluid" loading="lazy" width="400" height="400"
-                                    onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'%3E%3Crect width=\'400\' height=\'400\' fill=\'%23ddd\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EImage not found%3C/text%3E%3C/svg%3E';">
+                                <picture>
+                                    <source type="image/webp"
+                                        srcset="assets/img/profile-400.webp 1x, assets/img/profile-800.webp 2x">
+                                    <img src="assets/img/profile-400.png" alt="Md Nayeem Hossain" class="img-fluid"
+                                        loading="lazy" width="400" height="400"
+                                        onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'%3E%3Crect width=\'400\' height=\'400\' fill=\'%23ddd\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EImage not found%3C/text%3E%3C/svg%3E';">
+                                </picture>
                             </div>
                         </div>
                     </div>
@@ -489,8 +510,8 @@
                                     Dhaka, Bangladesh
                                 </span>
                             </div>
-                            <h2 class="about-intro-title">Hi, I&rsquo;m Md Nayeem Hossain &mdash; Full-Stack Java
-                                Developer</h2>
+                            <h3 class="about-intro-title">Hi, I&rsquo;m Md Nayeem Hossain &mdash; Full-Stack Java
+                                Developer</h3>
                             <p class="about-intro-desc">I focus on end-to-end ownership: clarifying requirements,
                                 shaping stable REST contracts, and pairing services with thoughtful
                                 <strong>Angular</strong> UIs so releases remain straightforward to operate in
@@ -1311,10 +1332,10 @@
                                         management, automated payroll calculations, and dynamic benefits administration
                                         — with Angular UI scaffolding accelerated via Cursor AI.</p>
                                     <ul class="project-tech">
-                                        <li class="tech-chip"><i class="fas fa-leaf"></i> Spring Boot 3.x</li>
-                                        <li class="tech-chip"><i class="fab fa-angular"></i> Angular</li>
-                                        <li class="tech-chip"><i class="fas fa-database"></i> MySQL</li>
-                                        <li class="tech-chip"><i class="fas fa-robot"></i> Cursor AI</li>
+                                        <li class="tech-chip"><i class="fas fa-leaf" aria-hidden="true"></i> Spring Boot 3.x</li>
+                                        <li class="tech-chip"><i class="fab fa-angular" aria-hidden="true"></i> Angular</li>
+                                        <li class="tech-chip"><i class="fas fa-database" aria-hidden="true"></i> MySQL</li>
+                                        <li class="tech-chip"><i class="fas fa-robot" aria-hidden="true"></i> Cursor AI</li>
                                     </ul>
                                 </div>
                                 <div class="project-card-footer">
@@ -1351,10 +1372,10 @@
                                         architecture. Contributed 15+ REST APIs, JWT authentication, and prototyped a
                                         RAG-based AI chat assistant for internal documentation queries.</p>
                                     <ul class="project-tech">
-                                        <li class="tech-chip"><i class="fas fa-leaf"></i> Spring Boot 3.x</li>
-                                        <li class="tech-chip"><i class="fas fa-shield-halved"></i> JWT</li>
-                                        <li class="tech-chip"><i class="fas fa-database"></i> PostgreSQL</li>
-                                        <li class="tech-chip"><i class="fas fa-robot"></i> RAG</li>
+                                        <li class="tech-chip"><i class="fas fa-leaf" aria-hidden="true"></i> Spring Boot 3.x</li>
+                                        <li class="tech-chip"><i class="fas fa-shield-halved" aria-hidden="true"></i> JWT</li>
+                                        <li class="tech-chip"><i class="fas fa-database" aria-hidden="true"></i> PostgreSQL</li>
+                                        <li class="tech-chip"><i class="fas fa-robot" aria-hidden="true"></i> RAG</li>
                                     </ul>
                                 </div>
                                 <div class="project-card-footer">
@@ -1385,9 +1406,9 @@
                                         architecture. Features include employee management, attendance tracking, and
                                         payroll integration — secured with OAuth 2.0.</p>
                                     <ul class="project-tech">
-                                        <li class="tech-chip"><i class="fas fa-leaf"></i> Spring Boot 3.x</li>
-                                        <li class="tech-chip"><i class="fas fa-shield-halved"></i> OAuth 2.0</li>
-                                        <li class="tech-chip"><i class="fas fa-diagram-project"></i> Microservices</li>
+                                        <li class="tech-chip"><i class="fas fa-leaf" aria-hidden="true"></i> Spring Boot 3.x</li>
+                                        <li class="tech-chip"><i class="fas fa-shield-halved" aria-hidden="true"></i> OAuth 2.0</li>
+                                        <li class="tech-chip"><i class="fas fa-diagram-project" aria-hidden="true"></i> Microservices</li>
                                     </ul>
                                 </div>
                                 <div class="project-card-footer">
@@ -1419,9 +1440,9 @@
                                         architecture. Developed financial management modules and integrated with other
                                         enterprise systems.</p>
                                     <ul class="project-tech">
-                                        <li class="tech-chip"><i class="fas fa-leaf"></i> Spring Boot 3.x</li>
-                                        <li class="tech-chip"><i class="fas fa-diagram-project"></i> Microservices</li>
-                                        <li class="tech-chip"><i class="fas fa-database"></i> PostgreSQL</li>
+                                        <li class="tech-chip"><i class="fas fa-leaf" aria-hidden="true"></i> Spring Boot 3.x</li>
+                                        <li class="tech-chip"><i class="fas fa-diagram-project" aria-hidden="true"></i> Microservices</li>
+                                        <li class="tech-chip"><i class="fas fa-database" aria-hidden="true"></i> PostgreSQL</li>
                                     </ul>
                                 </div>
                                 <div class="project-card-footer">
@@ -1545,11 +1566,13 @@
                         and pragmatic security &mdash; explore the experience and portfolio sections for details.</p>
                     <div class="footer-socials">
                         <a href="https://www.linkedin.com/in/mdnayeem1" target="_blank" rel="noopener noreferrer"
-                            aria-label="Visit Md Nayeem Hossain's LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                            aria-label="Visit Md Nayeem Hossain's LinkedIn profile"><i class="fab fa-linkedin"
+                                aria-hidden="true"></i></a>
                         <a href="https://github.com/md-nym" target="_blank" rel="noopener noreferrer"
-                            aria-label="Visit Md Nayeem Hossain's GitHub profile"><i class="fab fa-github"></i></a>
+                            aria-label="Visit Md Nayeem Hossain's GitHub profile"><i class="fab fa-github"
+                                aria-hidden="true"></i></a>
                         <a href="mailto:hossainmdnayeem45@gmail.com" aria-label="Email Md Nayeem Hossain"><i
-                                class="fas fa-envelope"></i></a>
+                                class="fas fa-envelope" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
@@ -1598,8 +1621,8 @@
     </footer>
 
     <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
-        aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></a>
+    <a href="#top" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
+        aria-label="Scroll to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
