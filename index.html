@@ -6,20 +6,18 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Md Nayeem Hossain | Java, Spring Boot &amp; Angular Developer | Bangladesh</title>
     <meta name="description"
-        content="Dhaka-based full-stack Java developer: Spring Boot 3.x microservices, Angular, PostgreSQL, Docker. Healthcare &amp; HRMS experience with OAuth 2.0, JWT, and secure REST APIs.">
+        content="Java developer based in Dhaka, open to remote &amp; hybrid roles worldwide. Spring Boot 3.x microservices, Angular, PostgreSQL, Docker. Healthcare &amp; HRMS experience with OAuth 2.0, JWT, and secure REST APIs.">
     <meta name="author" content="Md Nayeem Hossain">
     <meta name="google-site-verification" content="MPYDJVzl_dAsu_xqoVSncOIzwt7lAC6EPRWK9bh5WM4">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#065cc2" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#0b2a55" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">
     <meta name="color-scheme" content="light dark">
     <link rel="canonical" href="https://md-nym.github.io/portfolio">
 
     <!--
-      Inline theme bootstrap — runs synchronously before stylesheets
-      are applied so the page paints in the correct theme and we
-      never flash the wrong background. The full toggle logic lives
-      in assets/js/theme-toggle.js.
+      Inline theme bootstrap — runs synchronously before stylesheets are applied so the page paints in the correct theme and we
+      never flash the wrong background. The full toggle logic lives in assets/js/theme-toggle.js.
     -->
     <script>
         (function () {
@@ -42,6 +40,21 @@
     <!-- Lock scroll immediately while the document is still parsing. -->
     <script>document.documentElement.classList.add('is-loading');</script>
 
+    <!-- Tiny image fallback helper — defined early so inline onerror can call it
+         before deferred scripts have loaded. -->
+    <script>
+        window._ie = function (el) {
+            el.onerror = null;
+            var w = el.width || 200;
+            var h = el.height || 200;
+            var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + w + '" height="' + h + '">'
+                + '<rect width="100%" height="100%" fill="#ddd"/>'
+                + '<text x="50%" y="50%" text-anchor="middle" dy=".3em" fill="#999" font-family="Arial,sans-serif">Image not found</text>'
+                + '</svg>';
+            el.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
+        };
+    </script>
+
     <!-- Preloader controller. `defer` runs it after HTML parse,
          before DOMContentLoaded — the preloader element is in the DOM by then. -->
     <script src="assets/js/preloader.js" defer></script>
@@ -49,28 +62,28 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Md Nayeem Hossain">
-    <meta property="og:locale" content="en_BD">
+    <meta property="og:locale" content="en_US">
     <meta property="og:title" content="Md Nayeem Hossain | Java, Spring Boot &amp; Angular Developer | Bangladesh">
     <meta property="og:description"
-        content="Dhaka-based full-stack Java developer: Spring Boot 3.x microservices, Angular, PostgreSQL, Docker. Healthcare &amp; HRMS with OAuth 2.0, JWT, and secure REST APIs.">
-    <meta property="og:image"
-        content="https://md-nym.github.io/portfolio/assets/img/profile-1296.png">
+        content="Java developer based in Dhaka, open to remote &amp; hybrid roles worldwide. Spring Boot 3.x microservices, Angular, PostgreSQL, Docker. Healthcare &amp; HRMS with OAuth 2.0, JWT, and secure REST APIs.">
+    <meta property="og:image" content="https://md-nym.github.io/portfolio/assets/img/profile-1296.png">
     <meta property="og:image:alt"
-        content="Md Nayeem Hossain — Java, Spring Boot &amp; Angular developer, Dhaka, Bangladesh">
+        content="Md Nayeem Hossain — Java, Spring Boot &amp; Angular developer, Dhaka, Bangladesh — open to remote work worldwide">
+    <meta property="og:image:width" content="1296">
+    <meta property="og:image:height" content="1296">
     <meta property="og:url" content="https://md-nym.github.io/portfolio">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Md Nayeem Hossain | Java, Spring Boot &amp; Angular Developer | Bangladesh">
     <meta name="twitter:description"
-        content="Dhaka-based full-stack Java developer: Spring Boot 3.x microservices, Angular, PostgreSQL, Docker. Healthcare &amp; HRMS with OAuth 2.0, JWT, and secure REST APIs.">
-    <meta name="twitter:image"
-        content="https://md-nym.github.io/portfolio/assets/img/profile-1296.png">
+        content="Java developer based in Dhaka, open to remote &amp; hybrid roles worldwide. Spring Boot 3.x microservices, Angular, PostgreSQL, Docker. Healthcare &amp; HRMS with OAuth 2.0, JWT, and secure REST APIs.">
+    <meta name="twitter:image" content="https://md-nym.github.io/portfolio/assets/img/profile-1296.png">
     <meta name="twitter:image:alt"
-        content="Md Nayeem Hossain — Java, Spring Boot &amp; Angular developer, Dhaka, Bangladesh">
+        content="Md Nayeem Hossain — Java, Spring Boot &amp; Angular developer, Dhaka, Bangladesh — open to remote work worldwide">
 
-    <!-- Favicons (PNG assets ship in-repo; iOS uses apple-touch-icon) -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/profile-150.png">
+    <!-- Favicons: .ico in-repo; iOS uses apple-touch-icon -->
+    <link rel="icon" href="assets/img/Md_Nayeem_Hossain_Java_Developer_icon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
 
     <!-- Preload responsive hero image so it's ready for LCP. WebP variants
@@ -115,7 +128,7 @@
               "@id": "https://md-nym.github.io/portfolio/#website",
               "url": "https://md-nym.github.io/portfolio",
               "name": "Md Nayeem Hossain — Portfolio",
-              "description": "Dhaka-based full-stack Java developer: Spring Boot 3.x microservices, Angular, PostgreSQL, Docker. Healthcare and HRMS with OAuth 2.0, JWT, and secure REST APIs.",
+              "description": "Java developer based in Dhaka, open to remote and hybrid roles worldwide. Spring Boot 3.x microservices, Angular, PostgreSQL, Docker. Healthcare and HRMS with OAuth 2.0, JWT, and secure REST APIs.",
               "inLanguage": "en",
               "publisher": { "@id": "https://md-nym.github.io/portfolio/#person" }
           },
@@ -258,8 +271,8 @@
     <a href="#main" class="skip-to-main" aria-label="Skip navigation and go to main content">Skip to main content</a>
 
     <!-- Theme Toggle (sun / moon). Actual state is driven by data-theme on <html>. -->
-    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme"
-        title="Toggle color theme" aria-pressed="false">
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light theme"
+        title="Switch to light theme" aria-pressed="true">
         <i class="fas fa-sun theme-icon theme-icon-sun" aria-hidden="true"></i>
         <i class="fas fa-moon theme-icon theme-icon-moon" aria-hidden="true"></i>
         <span class="visually-hidden">Toggle color theme</span>
@@ -276,8 +289,7 @@
                             <source type="image/webp"
                                 srcset="assets/img/profile-150.webp 1x, assets/img/profile-300.webp 2x">
                             <img src="assets/img/profile-150.png" alt="Md Nayeem Hossain"
-                                class="img-fluid rounded-circle" width="150" height="150"
-                                onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ddd\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EImage not found%3C/text%3E%3C/svg%3E';">
+                                class="img-fluid rounded-circle" width="150" height="150" onerror="window._ie(this)">
                         </picture>
                         <span class="profile-status-dot" aria-hidden="true"></span>
                     </div>
@@ -288,7 +300,7 @@
                     </a>
                 </div>
 
-                <div class="social-links nav-socials text-center" aria-label="Social media profiles">
+                <nav class="social-links nav-socials text-center" aria-label="Social media profiles">
                     <a href="https://www.linkedin.com/in/mdnayeem1" target="_blank" rel="noopener noreferrer"
                         class="linkedin" aria-label="Visit Md Nayeem Hossain's LinkedIn profile"><i
                             class="fab fa-linkedin" aria-hidden="true"></i></a>
@@ -297,7 +309,7 @@
                             aria-hidden="true"></i></a>
                     <a href="mailto:hossainmdnayeem45@gmail.com" class="email" aria-label="Email Md Nayeem Hossain"><i
                             class="fas fa-envelope" aria-hidden="true"></i></a>
-                </div>
+                </nav>
 
                 <ul class="nav-list">
                     <li><a href="#hero"><i class="fas fa-house" aria-hidden="true"></i><span>Home</span></a></li>
@@ -309,7 +321,7 @@
                     </li>
                     <li><a href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i><span>Contact</span></a>
                     </li>
-                    <li><a href="assets/Md_Nayeem_Hossain_Java_Developer_CV.pdf"
+                    <li><a href="assets/cv/Md_Nayeem_Hossain_Java_Developer_CV.pdf"
                             download="Md_Nayeem_Hossain_Java_Developer_CV.pdf" aria-label="Download CV as PDF"><i
                                 class="fas fa-download" aria-hidden="true"></i><span>Download CV</span></a>
                     </li>
@@ -339,19 +351,18 @@
                             </div>
                             <h1 class="hero-title">Full-Stack Java Developer</h1>
                             <p class="hero-rotator" aria-live="polite">
-                                <span class="rotator-prefix">Specializing in </span>
+                                <span class="rotator-prefix">I build with </span>
                                 <span class="typed"
-                                    data-typed-items="Spring Boot 3.x, Microservices, Angular, AI-Augmented Dev, RAG & MCP, Enterprise Apps"></span>
+                                    data-typed-items="Spring Boot 3.x, Microservices, Angular, AI-Augmented Development, RAG & MCP, Enterprise Apps"></span>
                             </p>
-                            <p class="lead">Full-Stack Java Developer with 1+ years building and shipping scalable
-                                microservices on
+                            <p class="lead">I'm a Full-Stack Java Developer with 1+ years building and shipping
+                                production microservices on
                                 <strong>Java 17</strong> and <strong>Spring Boot 3.x</strong>, with production
                                 <strong>Angular</strong> work for enterprise <strong>healthcare</strong> and
                                 <strong>HRMS</strong> platforms. I combine <strong>AI-augmented workflows</strong>
                                 (Cursor AI, Vibe Coding), <strong>RAG-style</strong> assistance where it fits, and
-                                hardened auth with <strong>OAuth 2.0 / JWT</strong> — contributing to reduced deployment
-                                cycles by
-                                <strong>40%</strong>.
+                                hardened auth with <strong>OAuth 2.0 / JWT</strong> — contributing to faster,
+                                more predictable releases across two enterprise products.
                             </p>
 
                             <ul class="hero-stats" data-aos="fade-up" data-aos-delay="200"
@@ -371,15 +382,15 @@
                                 </li>
                                 <li class="stat-item">
                                     <div class="stat-icon" aria-hidden="true">
-                                        <i class="fas fa-briefcase"></i>
+                                        <i class="fas fa-plug"></i>
                                     </div>
                                     <div class="stat-body">
                                         <span class="stat-value">
                                             <span class="purecounter" data-purecounter-start="0"
-                                                data-purecounter-end="1" data-purecounter-duration="2">0</span><span
+                                                data-purecounter-end="15" data-purecounter-duration="2">0</span><span
                                                 class="stat-suffix">+</span>
                                         </span>
-                                        <span class="stat-label">Years Experience</span>
+                                        <span class="stat-label">REST APIs Built</span>
                                     </div>
                                 </li>
                                 <li class="stat-item">
@@ -398,7 +409,7 @@
                             </ul>
 
                             <div class="hero-actions" data-aos="fade-up" data-aos-delay="300">
-                                <a href="assets/Md_Nayeem_Hossain_Java_Developer_CV.pdf"
+                                <a href="assets/cv/Md_Nayeem_Hossain_Java_Developer_CV.pdf"
                                     download="Md_Nayeem_Hossain_Java_Developer_CV.pdf" class="hero-btn hero-btn-primary"
                                     aria-label="Download CV as PDF">
                                     <i class="fas fa-download" aria-hidden="true"></i>
@@ -460,8 +471,7 @@
                                 <img src="assets/img/profile-1296.png"
                                     alt="Md Nayeem Hossain - Full-Stack Java Developer"
                                     class="img-fluid hero-main-image" width="800" height="600" fetchpriority="high"
-                                    decoding="async"
-                                    onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'600\'%3E%3Crect width=\'800\' height=\'600\' fill=\'%23ddd\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EImage not found%3C/text%3E%3C/svg%3E';">
+                                    onerror="window._ie(this)">
                             </picture>
                             <div class="image-overlay" aria-hidden="true"></div>
                         </div>
@@ -478,7 +488,7 @@
             <!-- Section Title -->
             <div class="container section-title">
                 <h2>About</h2>
-                <p>How I approach ownership, delivery quality, and long-term enterprise products</p>
+                <p>A quick look at how I work, what I've shipped, and what I care about.</p>
             </div><!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -492,8 +502,7 @@
                                     <source type="image/webp"
                                         srcset="assets/img/profile-400.webp 1x, assets/img/profile-800.webp 2x">
                                     <img src="assets/img/profile-400.png" alt="Md Nayeem Hossain" class="img-fluid"
-                                        loading="lazy" width="400" height="400"
-                                        onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'%3E%3Crect width=\'400\' height=\'400\' fill=\'%23ddd\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EImage not found%3C/text%3E%3C/svg%3E';">
+                                        loading="lazy" width="400" height="400" onerror="window._ie(this)">
                                 </picture>
                             </div>
                         </div>
@@ -507,18 +516,18 @@
                                 </span>
                                 <span class="about-pill about-pill-location">
                                     <i class="fas fa-location-dot" aria-hidden="true"></i>
-                                    Dhaka, Bangladesh
+                                    Dhaka, BD — Open Worldwide
                                 </span>
                             </div>
                             <h3 class="about-intro-title">Hi, I&rsquo;m Md Nayeem Hossain &mdash; Full-Stack Java
                                 Developer</h3>
                             <p class="about-intro-desc">I focus on end-to-end ownership: clarifying requirements,
                                 shaping stable REST contracts, and pairing services with thoughtful
-                                <strong>Angular</strong> UIs so releases remain straightforward to operate in
-                                production. My recent work spans <strong>healthcare</strong> and <strong>HRMS</strong>
-                                products where privacy, traceability, and predictable operations matter as much as
-                                pace &mdash; so I favor incremental delivery, close collaboration with product and QA,
-                                and changes that stay maintainable after launch.
+                                <strong>Angular</strong> UIs so releases stay easy to run in production. My recent
+                                work spans <strong>healthcare</strong> and <strong>HRMS</strong> products where
+                                privacy, traceability, and predictable operations matter as much as pace &mdash; so I
+                                favor incremental delivery, close collaboration with product and QA, and code that's
+                                still easy to work with a year later.
                             </p>
                         </article>
                     </div>
@@ -581,19 +590,19 @@
                     </header>
 
                     <ol class="journey-rail" aria-label="Career milestones">
-                        <li class="journey-node" data-aos="slide-up" data-aos-delay="300">
+                        <li class="journey-node" data-aos="fade-up" data-aos-delay="300">
                             <span class="journey-year">2019</span>
                             <span class="journey-desc">Earned a B.Sc. from the University of Dhaka</span>
                         </li>
-                        <li class="journey-node" data-aos="slide-up" data-aos-delay="400">
+                        <li class="journey-node" data-aos="fade-up" data-aos-delay="400">
                             <span class="journey-year">2024</span>
                             <span class="journey-desc">Completed Diploma in Enterprise Systems Analysis &amp; Design
                                 (Java EE)</span>
                         </li>
-                        <li class="journey-node journey-node-current" data-aos="slide-up" data-aos-delay="500">
+                        <li class="journey-node journey-node-current" data-aos="fade-up" data-aos-delay="500">
                             <span class="journey-year">
                                 <span class="journey-year-dot" aria-hidden="true"></span>
-                                2025
+                                2025 – Present
                             </span>
                             <span class="journey-desc">Junior Software Engineer at eGeneration PLC</span>
                         </li>
@@ -614,8 +623,8 @@
                                 <ul class="about-languages-list">
                                     <li class="about-language-item">
                                         <div class="about-language-flag">
-                                            <img src="assets/united-states-flag.png" alt="United States Flag" width="40"
-                                                height="40" loading="lazy">
+                                            <img src="assets/img/united-states-flag.png" alt="United States Flag"
+                                                width="40" height="40" loading="lazy" onerror="window._ie(this)">
                                         </div>
                                         <div class="about-language-meta">
                                             <span class="about-language-name">English</span>
@@ -627,8 +636,8 @@
                                     </li>
                                     <li class="about-language-item">
                                         <div class="about-language-flag">
-                                            <img src="assets/bangladesh-flag.png" alt="Bangladesh Flag" width="40"
-                                                height="40" loading="lazy">
+                                            <img src="assets/img/bangladesh-flag.png" alt="Bangladesh Flag" width="40"
+                                                height="40" loading="lazy" onerror="window._ie(this)">
                                         </div>
                                         <div class="about-language-meta">
                                             <span class="about-language-name">Bengali</span>
@@ -676,16 +685,16 @@
                 <div class="about-cta" data-aos="fade-up" data-aos-delay="300">
                     <div class="about-cta-text">
                         <span class="about-pill about-pill-accent">
-                            Dhaka, Bangladesh &middot; Open to new opportunities
+                            Dhaka, BD &mdash; Open Worldwide &middot; Remote or Hybrid
                         </span>
-                        <h3>Interested in collaborating on your next initiative?</h3>
+                        <h3>Have a project in mind? Let's build something great together.</h3>
                     </div>
                     <div class="about-cta-actions">
                         <a href="#portfolio" class="about-btn about-btn-primary">
                             <i class="fas fa-briefcase" aria-hidden="true"></i>
                             <span>View My Work</span>
                         </a>
-                        <a href="assets/Md_Nayeem_Hossain_Java_Developer_CV.pdf"
+                        <a href="assets/cv/Md_Nayeem_Hossain_Java_Developer_CV.pdf"
                             download="Md_Nayeem_Hossain_Java_Developer_CV.pdf" class="about-btn about-btn-outline"
                             aria-label="Download resume as PDF">
                             <i class="fas fa-download" aria-hidden="true"></i>
@@ -704,7 +713,7 @@
             <!-- Section Title -->
             <div class="container section-title">
                 <h2>Skills</h2>
-                <p>Practical depth across languages, frameworks, delivery tooling, and security</p>
+                <p>The tools and frameworks I reach for when building real products.</p>
             </div><!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -728,56 +737,25 @@
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">Java 17 / 21</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="90"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="Java 17 / 21 proficiency" aria-valuenow="90"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-expert">Expert</span>
                                                 </div>
                                             </div>
-
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">TypeScript</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="80"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="TypeScript proficiency" aria-valuenow="80"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-proficient">Proficient</span>
                                                 </div>
                                             </div>
-
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">JavaScript</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="85"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="JavaScript proficiency" aria-valuenow="85"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-proficient">Proficient</span>
                                                 </div>
                                             </div>
-
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">SQL / HTML5 / CSS3</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="85"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="SQL, HTML5 and CSS3 proficiency" aria-valuenow="85"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-proficient">Proficient</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -799,56 +777,25 @@
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">Spring Boot 3.x</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="88"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="Spring Boot 3.x proficiency" aria-valuenow="88"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-expert">Expert</span>
                                                 </div>
                                             </div>
-
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">Spring Framework / AI</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="80"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="Spring Framework and Spring AI proficiency"
-                                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-proficient">Proficient</span>
                                                 </div>
                                             </div>
-
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">Hibernate</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="82"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="Hibernate proficiency" aria-valuenow="82"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-proficient">Proficient</span>
                                                 </div>
                                             </div>
-
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">Angular / Bootstrap</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="78"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="Angular and Bootstrap proficiency"
-                                                        aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-proficient">Proficient</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -863,63 +810,26 @@
                                             </div>
                                             <div class="skill-card-title">
                                                 <h3>AI &amp; Productivity</h3>
-                                                <span class="skill-count">4 core</span>
+                                                <span class="skill-count">3 core</span>
                                             </div>
                                         </header>
                                         <div class="skills-animation">
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">Cursor AI</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="88"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="Cursor AI proficiency" aria-valuenow="88"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-expert">Expert</span>
                                                 </div>
                                             </div>
-
-                                            <div class="skill-item">
-                                                <div class="skill-info">
-                                                    <span class="skill-name">Vibe Coding</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="85"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="Vibe Coding proficiency" aria-valuenow="85"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">RAG Architecture (LLM)</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="75"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="RAG Architecture and LLM proficiency"
-                                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-proficient">Proficient</span>
                                                 </div>
                                             </div>
-
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">MCP Client / Server</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="72"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="MCP Client and Server proficiency"
-                                                        aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-familiar">Familiar</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -941,56 +851,25 @@
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">Docker / Maven</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="75"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="Docker and Maven proficiency" aria-valuenow="75"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-proficient">Proficient</span>
                                                 </div>
                                             </div>
-
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">PostgreSQL</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="85"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="PostgreSQL proficiency" aria-valuenow="85"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-proficient">Proficient</span>
                                                 </div>
                                             </div>
-
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">Git / GitHub / Jira</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="90"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="Git, GitHub and Jira proficiency" aria-valuenow="90"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-expert">Expert</span>
                                                 </div>
                                             </div>
-
                                             <div class="skill-item">
                                                 <div class="skill-info">
                                                     <span class="skill-name">JWT / OAuth 2.0</span>
-                                                    <span class="skill-percentage"><span class="skill-purecounter"
-                                                            data-purecounter-start="0" data-purecounter-end="85"
-                                                            data-purecounter-duration="2">0</span>%</span>
-                                                </div>
-                                                <div class="skill-bar progress">
-                                                    <div class="progress-bar" role="progressbar"
-                                                        aria-label="JWT and OAuth 2.0 proficiency" aria-valuenow="85"
-                                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <span class="skill-tier tier-proficient">Proficient</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1013,59 +892,14 @@
                             </header>
 
                             <p class="summary-description">
-                                These proficiency indicators are directional: they reflect where I spend the most
-                                hands-on time on real work &mdash; <strong>APIs and services</strong>,
-                                <strong>Angular</strong> when the UI needs attention, <strong>data and
-                                    persistence</strong>,
-                                and the <strong>tooling</strong> that keeps builds, reviews, and releases predictable,
-                                with <strong>security</strong> treated as a baseline rather than an afterthought.
+                                These bars give a rough read on where I spend most of my hands-on time &mdash;
+                                <strong>APIs and services</strong>, <strong>Angular</strong> when the UI needs
+                                attention, <strong>data and persistence</strong>, and the <strong>tooling</strong>
+                                that keeps builds, reviews, and releases predictable.
+                                <strong>Security</strong> is treated as a baseline, not an afterthought.
                             </p>
 
-                            <ul class="summary-stats" aria-label="Key delivery metrics">
-                                <li class="stat-item" data-aos="zoom-in" data-aos-delay="300">
-                                    <div class="stat-icon" aria-hidden="true">
-                                        <i class="fas fa-trophy"></i>
-                                    </div>
-                                    <div class="stat-body">
-                                        <span class="stat-value">
-                                            <span class="purecounter" data-purecounter-start="0"
-                                                data-purecounter-end="1" data-purecounter-duration="2">0</span><span
-                                                class="stat-suffix">+</span>
-                                        </span>
-                                        <span class="stat-label">Years Experience</span>
-                                    </div>
-                                </li>
-
-                                <li class="stat-item" data-aos="zoom-in" data-aos-delay="400">
-                                    <div class="stat-icon" aria-hidden="true">
-                                        <i class="fas fa-diagram-project"></i>
-                                    </div>
-                                    <div class="stat-body">
-                                        <span class="stat-value">
-                                            <span class="purecounter" data-purecounter-start="0"
-                                                data-purecounter-end="10" data-purecounter-duration="2">0</span><span
-                                                class="stat-suffix">+</span>
-                                        </span>
-                                        <span class="stat-label">Microservices</span>
-                                    </div>
-                                </li>
-
-                                <li class="stat-item" data-aos="zoom-in" data-aos-delay="500">
-                                    <div class="stat-icon" aria-hidden="true">
-                                        <i class="fas fa-circle-check"></i>
-                                    </div>
-                                    <div class="stat-body">
-                                        <span class="stat-value">
-                                            <span class="purecounter" data-purecounter-start="0"
-                                                data-purecounter-end="95" data-purecounter-duration="2">0</span><span
-                                                class="stat-suffix">%</span>
-                                        </span>
-                                        <span class="stat-label">On-Time Delivery</span>
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <div class="focus-areas" data-aos="fade-up" data-aos-delay="600">
+                            <div class="focus-areas" data-aos="fade-up" data-aos-delay="300">
                                 <h4 class="focus-title">
                                     <i class="fas fa-bullseye" aria-hidden="true"></i>
                                     Focus Areas
@@ -1073,8 +907,6 @@
                                 <ul class="focus-list" aria-label="Current focus areas">
                                     <li class="focus-chip"><i class="fas fa-robot" aria-hidden="true"></i> AI-Augmented
                                         Engineering</li>
-                                    <li class="focus-chip"><i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i>
-                                        Vibe Coding</li>
                                     <li class="focus-chip"><i class="fas fa-brain" aria-hidden="true"></i> RAG
                                         Architecture</li>
                                     <li class="focus-chip"><i class="fas fa-plug" aria-hidden="true"></i> MCP Protocol
@@ -1099,7 +931,7 @@
             <!-- Section Title -->
             <div class="container section-title">
                 <h2>Resume</h2>
-                <p>Experience, education, and continuous professional development</p>
+                <p>Where I've worked, what I've learned, and what I'm still learning.</p>
             </div><!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -1112,7 +944,7 @@
                                     <i class="fas fa-briefcase" aria-hidden="true"></i>
                                 </div>
                                 <div class="resume-header-text">
-                                    <h2>Professional Experience</h2>
+                                    <h3>Professional Experience</h3>
                                     <p class="section-subtitle">Scope, responsibilities, and outcomes by role</p>
                                 </div>
                             </div>
@@ -1124,8 +956,8 @@
                                             <i class="fas fa-code-branch" aria-hidden="true"></i>
                                         </div>
                                         <div class="role-info">
-                                            <h3>Junior Software Engineer</h3>
-                                            <h4>eGeneration PLC</h4>
+                                            <h4>Junior Software Engineer</h4>
+                                            <h5>eGeneration PLC</h5>
                                         </div>
                                         <span class="duration duration-current">
                                             <span class="duration-dot" aria-hidden="true"></span>
@@ -1135,10 +967,10 @@
                                     <div class="card-body">
                                         <p>Building and evolving microservices for eG-Health and eG-HRMS on
                                             <strong>Java 17</strong> and <strong>Spring Boot 3.x</strong>, using
-                                            disciplined AI-assisted workflows where they improve quality and speed.
+                                            AI-assisted workflows where they genuinely improve quality and speed.
                                         </p>
                                         <ul class="achievements">
-                                            <li>Engineered and maintained <strong>10+ microservices</strong> for
+                                            <li>Built and maintained <strong>10+ microservices</strong> for
                                                 eG-Health and eG-HRMS using Java 17 and Spring Boot 3.x, contributing
                                                 to a <strong>40% reduction</strong> in deployment time through
                                                 containerization.
@@ -1147,13 +979,13 @@
                                                 applications using <strong>JWT</strong> and <strong>OAuth 2.0</strong>,
                                                 reducing exposure to common access-control gaps.
                                             </li>
-                                            <li>Leveraged <strong>Cursor AI</strong> and <strong>Vibe Coding</strong>
-                                                methodologies to accelerate code generation and refactor legacy
-                                                modules, helping improve sprint velocity by <strong>about 20%</strong>.
+                                            <li>Used <strong>Cursor AI</strong> and <strong>Vibe Coding</strong>
+                                                workflows to speed up code generation and refactor legacy modules,
+                                                helping lift sprint velocity by <strong>~20%</strong>.
                                             </li>
-                                            <li>Contributed to <strong>Agile / Scrum</strong> ceremonies via Jira,
-                                                supporting <strong>95% on-time</strong> sprint delivery through rigorous
-                                                code review standards.</li>
+                                            <li>Participated in <strong>Agile / Scrum</strong> ceremonies via Jira,
+                                                with strong code review habits supporting <strong>95% on-time</strong>
+                                                sprint delivery.</li>
                                         </ul>
                                         <ul class="exp-tags" aria-label="Key technologies">
                                             <li class="exp-tag"><i class="fas fa-leaf"></i> Spring Boot 3.x</li>
@@ -1172,8 +1004,8 @@
                                             <i class="fas fa-seedling" aria-hidden="true"></i>
                                         </div>
                                         <div class="role-info">
-                                            <h3>Java Developer Intern</h3>
-                                            <h4>eGeneration PLC</h4>
+                                            <h4>Java Developer Intern</h4>
+                                            <h5>eGeneration PLC</h5>
                                         </div>
                                         <span class="duration">Nov 2024 – Jan 2025</span>
                                     </div>
@@ -1206,7 +1038,7 @@
                                     <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                                 </div>
                                 <div class="resume-header-text">
-                                    <h2>Education &amp; Certifications</h2>
+                                    <h3>Education &amp; Certifications</h3>
                                     <p class="section-subtitle">Formal training and continuous learning</p>
                                 </div>
                             </div>
@@ -1214,62 +1046,62 @@
                             <div class="education-timeline">
                                 <div class="timeline-track" aria-hidden="true"></div>
 
-                                <div class="education-item" data-aos="slide-up" data-aos-delay="300">
+                                <div class="education-item" data-aos="fade-up" data-aos-delay="300">
                                     <div class="timeline-marker" aria-hidden="true">
                                         <i class="fas fa-certificate"></i>
                                     </div>
                                     <article class="education-content">
                                         <div class="degree-header">
-                                            <h3>Diploma in Enterprise Systems Analysis &amp; Design</h3>
+                                            <h4>Diploma in Enterprise Systems Analysis &amp; Design</h4>
                                             <span class="year">Nov 2023 – Oct 2024</span>
                                         </div>
-                                        <h4 class="institution">IsDB-BISEW IT Scholarship Programme</h4>
+                                        <h5 class="institution">IsDB-BISEW IT Scholarship Programme</h5>
                                         <p>Specialized in Java EE, Spring Framework, and enterprise application
                                             development.</p>
                                     </article>
                                 </div>
 
-                                <div class="education-item" data-aos="slide-up" data-aos-delay="400">
+                                <div class="education-item" data-aos="fade-up" data-aos-delay="400">
                                     <div class="timeline-marker" aria-hidden="true">
                                         <i class="fas fa-graduation-cap"></i>
                                     </div>
                                     <article class="education-content">
                                         <div class="degree-header">
-                                            <h3>Bachelor of Science</h3>
+                                            <h4>Bachelor of Science</h4>
                                             <span class="year">Aug 2014 – May 2019</span>
                                         </div>
-                                        <h4 class="institution">University of Dhaka</h4>
+                                        <h5 class="institution">University of Dhaka</h5>
                                         <p>Dhaka, Bangladesh</p>
                                     </article>
                                 </div>
 
-                                <div class="education-item" data-aos="slide-up" data-aos-delay="500">
+                                <div class="education-item" data-aos="fade-up" data-aos-delay="500">
                                     <div class="timeline-marker" aria-hidden="true">
                                         <i class="fas fa-laptop-code"></i>
                                     </div>
                                     <article class="education-content">
                                         <div class="degree-header">
-                                            <h3>Web and Mobile App Development</h3>
+                                            <h4>Web and Mobile App Development</h4>
                                             <span class="year">2024</span>
                                         </div>
-                                        <h4 class="institution">IsDB-BISEW</h4>
+                                        <h5 class="institution">IsDB-BISEW</h5>
                                         <p>Web and Mobile App Development using Spring Boot, Android and Flutter.</p>
                                     </article>
                                 </div>
 
-                                <div class="education-item" data-aos="slide-up" data-aos-delay="600">
+                                <div class="education-item" data-aos="fade-up" data-aos-delay="600">
                                     <div class="timeline-marker" aria-hidden="true">
                                         <i class="fas fa-robot"></i>
                                     </div>
                                     <article class="education-content">
                                         <div class="degree-header">
-                                            <h3>Self-Directed Study — AI-Augmented Development</h3>
+                                            <h4>Self-Directed Study — AI-Augmented Development</h4>
                                             <span class="year year-ongoing">
                                                 <span class="year-dot" aria-hidden="true"></span>
                                                 Ongoing
                                             </span>
                                         </div>
-                                        <h4 class="institution">Continuous Learning</h4>
+                                        <h5 class="institution">Continuous Learning</h5>
                                         <p>Advanced RAG Architectures, MCP Protocol implementation, and
                                             AI-Assisted Development Workflows (Cursor AI / Vibe Coding).</p>
                                     </article>
@@ -1312,7 +1144,8 @@
                         </li>
                     </ul>
 
-                    <div id="portfolio-grid" class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+                    <div id="portfolio-grid" class="row g-4 isotope-container justify-content-center" role="tabpanel"
+                        aria-label="Portfolio projects" data-aos="fade-up" data-aos-delay="300">
 
                         <!-- Payroll Management System -->
                         <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item isotope-item filter-development">
@@ -1329,13 +1162,17 @@
                                 <div class="project-card-body">
                                     <h3 class="project-title">Payroll Management System</h3>
                                     <p class="project-desc">Full-stack payroll solution featuring employee lifecycle
-                                        management, automated payroll calculations, and dynamic benefits administration
+                                        management, automated payroll calculations, and benefits administration
                                         — with Angular UI scaffolding accelerated via Cursor AI.</p>
                                     <ul class="project-tech">
-                                        <li class="tech-chip"><i class="fas fa-leaf" aria-hidden="true"></i> Spring Boot 3.x</li>
-                                        <li class="tech-chip"><i class="fab fa-angular" aria-hidden="true"></i> Angular</li>
-                                        <li class="tech-chip"><i class="fas fa-database" aria-hidden="true"></i> MySQL</li>
-                                        <li class="tech-chip"><i class="fas fa-robot" aria-hidden="true"></i> Cursor AI</li>
+                                        <li class="tech-chip"><i class="fas fa-leaf" aria-hidden="true"></i> Spring Boot
+                                            3.x</li>
+                                        <li class="tech-chip"><i class="fab fa-angular" aria-hidden="true"></i> Angular
+                                        </li>
+                                        <li class="tech-chip"><i class="fas fa-database" aria-hidden="true"></i> MySQL
+                                        </li>
+                                        <li class="tech-chip"><i class="fas fa-robot" aria-hidden="true"></i> Cursor AI
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="project-card-footer">
@@ -1372,9 +1209,12 @@
                                         architecture. Contributed 15+ REST APIs, JWT authentication, and prototyped a
                                         RAG-based AI chat assistant for internal documentation queries.</p>
                                     <ul class="project-tech">
-                                        <li class="tech-chip"><i class="fas fa-leaf" aria-hidden="true"></i> Spring Boot 3.x</li>
-                                        <li class="tech-chip"><i class="fas fa-shield-halved" aria-hidden="true"></i> JWT</li>
-                                        <li class="tech-chip"><i class="fas fa-database" aria-hidden="true"></i> PostgreSQL</li>
+                                        <li class="tech-chip"><i class="fas fa-leaf" aria-hidden="true"></i> Spring Boot
+                                            3.x</li>
+                                        <li class="tech-chip"><i class="fas fa-shield-halved" aria-hidden="true"></i>
+                                            JWT</li>
+                                        <li class="tech-chip"><i class="fas fa-database" aria-hidden="true"></i>
+                                            PostgreSQL</li>
                                         <li class="tech-chip"><i class="fas fa-robot" aria-hidden="true"></i> RAG</li>
                                     </ul>
                                 </div>
@@ -1388,27 +1228,35 @@
                             </article>
                         </div>
 
-                        <!-- eG-HRMS Platform -->
+                        <!-- RAG Document Intelligence Platform -->
                         <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item isotope-item filter-enterprise">
-                            <article class="project-card project-card--hrms" data-aos="zoom-in" data-aos-delay="300">
+                            <article class="project-card project-card--ai" data-aos="zoom-in" data-aos-delay="300">
                                 <div class="project-card-top">
                                     <div class="project-icon">
-                                        <i class="fas fa-users-gear" aria-hidden="true"></i>
+                                        <i class="fas fa-comments" aria-hidden="true"></i>
                                     </div>
                                     <div class="project-tags">
                                         <span class="project-tag tag-primary">Enterprise</span>
-                                        <span class="project-tag tag-accent">HRMS</span>
+                                        <span class="project-tag tag-accent">AI / RAG</span>
                                     </div>
                                 </div>
                                 <div class="project-card-body">
-                                    <h3 class="project-title">eG-HRMS Platform</h3>
-                                    <p class="project-desc">Human Resource Management System built on a microservices
-                                        architecture. Features include employee management, attendance tracking, and
-                                        payroll integration — secured with OAuth 2.0.</p>
+                                    <h3 class="project-title">RAG Document Intelligence Platform</h3>
+                                    <p class="project-desc">Document-aware chat platform built for Premier Bank.
+                                        Staff upload structured files and query it instantly — Spring AI auto-indexes
+                                        content
+                                        into Qdrant, no model retraining ever needed.</p>
                                     <ul class="project-tech">
-                                        <li class="tech-chip"><i class="fas fa-leaf" aria-hidden="true"></i> Spring Boot 3.x</li>
-                                        <li class="tech-chip"><i class="fas fa-shield-halved" aria-hidden="true"></i> OAuth 2.0</li>
-                                        <li class="tech-chip"><i class="fas fa-diagram-project" aria-hidden="true"></i> Microservices</li>
+                                        <li class="tech-chip"><i class="fas fa-leaf" aria-hidden="true"></i> Spring
+                                            Boot 3.x</li>
+                                        <li class="tech-chip"><i class="fas fa-brain" aria-hidden="true"></i> Spring
+                                            AI</li>
+                                        <li class="tech-chip"><i class="fas fa-database" aria-hidden="true"></i>
+                                            PostgreSQL</li>
+                                        <li class="tech-chip"><i class="fas fa-vector-square" aria-hidden="true"></i>
+                                            Qdrant</li>
+                                        <li class="tech-chip"><i class="fab fa-angular" aria-hidden="true"></i>
+                                            Angular</li>
                                     </ul>
                                 </div>
                                 <div class="project-card-footer">
@@ -1437,12 +1285,51 @@
                                 <div class="project-card-body">
                                     <h3 class="project-title">eG-Accounting Platform</h3>
                                     <p class="project-desc">Enterprise accounting platform with microservices
-                                        architecture. Developed financial management modules and integrated with other
-                                        enterprise systems.</p>
+                                        architecture. Built financial management modules that connect cleanly with
+                                        the rest of the platform.</p>
                                     <ul class="project-tech">
-                                        <li class="tech-chip"><i class="fas fa-leaf" aria-hidden="true"></i> Spring Boot 3.x</li>
-                                        <li class="tech-chip"><i class="fas fa-diagram-project" aria-hidden="true"></i> Microservices</li>
-                                        <li class="tech-chip"><i class="fas fa-database" aria-hidden="true"></i> PostgreSQL</li>
+                                        <li class="tech-chip"><i class="fas fa-leaf" aria-hidden="true"></i> Spring Boot
+                                            3.x</li>
+                                        <li class="tech-chip"><i class="fas fa-diagram-project" aria-hidden="true"></i>
+                                            Microservices</li>
+                                        <li class="tech-chip"><i class="fas fa-database" aria-hidden="true"></i>
+                                            PostgreSQL</li>
+                                    </ul>
+                                </div>
+                                <div class="project-card-footer">
+                                    <span class="project-status status-production"
+                                        title="Internal enterprise product — not publicly available">
+                                        <span class="status-dot" aria-hidden="true"></span>
+                                        In Production · Internal
+                                    </span>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- eG-HRMS Platform -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 portfolio-item isotope-item filter-enterprise">
+                            <article class="project-card project-card--hrms" data-aos="zoom-in" data-aos-delay="500">
+                                <div class="project-card-top">
+                                    <div class="project-icon">
+                                        <i class="fas fa-users-gear" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="project-tags">
+                                        <span class="project-tag tag-primary">Enterprise</span>
+                                        <span class="project-tag tag-accent">HRMS</span>
+                                    </div>
+                                </div>
+                                <div class="project-card-body">
+                                    <h3 class="project-title">eG-HRMS Platform</h3>
+                                    <p class="project-desc">Human Resource Management System built on a microservices
+                                        architecture. Features include employee management, attendance tracking, and
+                                        payroll integration — secured with OAuth 2.0.</p>
+                                    <ul class="project-tech">
+                                        <li class="tech-chip"><i class="fas fa-leaf" aria-hidden="true"></i> Spring Boot
+                                            3.x</li>
+                                        <li class="tech-chip"><i class="fas fa-shield-halved" aria-hidden="true"></i>
+                                            OAuth 2.0</li>
+                                        <li class="tech-chip"><i class="fas fa-diagram-project" aria-hidden="true"></i>
+                                            Microservices</li>
                                     </ul>
                                 </div>
                                 <div class="project-card-footer">
@@ -1481,8 +1368,9 @@
                             <span class="availability-dot" aria-hidden="true"></span>
                             Available for new opportunities
                         </span>
-                        <h3>Considering a role or a scoped engagement?</h3>
-                        <p>I am open to full-time roles, freelance work, and focused collaborations across
+                        <h3>Have a role or project in mind?</h3>
+                        <p>I'm open to full-time roles, freelance work, and direct project engagements — remote or
+                            hybrid — across
                             <strong>enterprise Java</strong>, <strong>Spring Boot microservices</strong>, and
                             <strong>AI-assisted engineering</strong>. A short note with context and timelines is
                             enough to start.
@@ -1519,8 +1407,8 @@
                                 <i class="fas fa-location-dot" aria-hidden="true"></i>
                             </div>
                             <div class="contact-card-body">
-                                <span class="contact-card-label">Based in</span>
-                                <span class="contact-card-value">Dhaka, Bangladesh</span>
+                                <span class="contact-card-label">Location</span>
+                                <span class="contact-card-value">Dhaka, BD — Open Worldwide</span>
                             </div>
                         </div>
                     </div>
@@ -1529,7 +1417,7 @@
                         <a href="mailto:hossainmdnayeem45@gmail.com?subject=Opportunity%20for%20Md%20Nayeem%20Hossain"
                             class="btn btn-primary contact-cta">
                             <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                            <span>Send Email</span>
+                            <span>Drop an Email</span>
                         </a>
                         <a href="https://www.linkedin.com/in/mdnayeem1" target="_blank" rel="noopener noreferrer"
                             class="btn btn-outline contact-cta">
@@ -1562,8 +1450,8 @@
                 <div class="footer-col footer-brand">
                     <h3 class="footer-name">Md Nayeem Hossain</h3>
                     <p class="footer-tagline">Full-Stack Java Developer · AI-Augmented Engineering</p>
-                    <p class="footer-description">Full-stack delivery from Dhaka: resilient services, thoughtful UIs,
-                        and pragmatic security &mdash; explore the experience and portfolio sections for details.</p>
+                    <p class="footer-description">Full-stack delivery from Dhaka &mdash; resilient services, thoughtful
+                        UIs, and pragmatic security. Take a look around, and thanks for stopping by.</p>
                     <div class="footer-socials">
                         <a href="https://www.linkedin.com/in/mdnayeem1" target="_blank" rel="noopener noreferrer"
                             aria-label="Visit Md Nayeem Hossain's LinkedIn profile"><i class="fab fa-linkedin"
@@ -1593,7 +1481,7 @@
                     <ul>
                         <li>
                             <i class="fas fa-location-dot" aria-hidden="true"></i>
-                            <span>Dhaka, Bangladesh</span>
+                            <span>Dhaka, BD — Open Worldwide</span>
                         </li>
                         <li>
                             <i class="fas fa-envelope" aria-hidden="true"></i>
@@ -1612,7 +1500,8 @@
 
             <div class="footer-bottom">
                 <div class="copyright">
-                    <p>© <strong>Md Nayeem Hossain</strong> <span id="copyright-year"></span> · All Rights Reserved</p>
+                    <p>© <strong>Md Nayeem Hossain</strong> <span id="copyright-year">2026</span> · All Rights Reserved
+                    </p>
                 </div>
             </div>
 
