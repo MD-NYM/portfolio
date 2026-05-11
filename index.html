@@ -16,10 +16,6 @@
     <meta name="color-scheme" content="light dark">
     <link rel="canonical" href="https://md-nym.github.io/portfolio">
 
-    <!--
-      Inline theme bootstrap — runs synchronously before stylesheets are applied so the page paints in the correct theme and we
-      never flash the wrong background. The full toggle logic lives in assets/js/theme-toggle.js.
-    -->
     <script>
         (function () {
             try {
@@ -35,14 +31,8 @@
         })();
     </script>
 
-    <!-- Preloader styles (loaded first so the overlay is styled on initial paint). -->
     <link href="assets/css/preloader.css" rel="stylesheet">
-
-    <!-- Lock scroll immediately while the document is still parsing. -->
     <script>document.documentElement.classList.add('is-loading');</script>
-
-    <!-- Tiny image fallback helper — defined early so inline onerror can call it
-         before deferred scripts have loaded. -->
     <script>
         window._ie = function (el) {
             el.onerror = null;
@@ -55,12 +45,8 @@
             el.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
         };
     </script>
-
-    <!-- Preloader controller. `defer` runs it after HTML parse,
-         before DOMContentLoaded — the preloader element is in the DOM by then. -->
     <script src="assets/js/preloader.js" defer></script>
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Md Nayeem Hossain">
     <meta property="og:locale" content="en_US">
@@ -74,7 +60,6 @@
     <meta property="og:image:height" content="1296">
     <meta property="og:url" content="https://md-nym.github.io/portfolio">
 
-    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Md Nayeem Hossain | Java, Spring Boot &amp; Angular Developer | Bangladesh">
     <meta name="twitter:description"
@@ -83,30 +68,21 @@
     <meta name="twitter:image:alt"
         content="Md Nayeem Hossain — Java, Spring Boot &amp; Angular developer, Dhaka, Bangladesh — open to remote work worldwide">
 
-    <!-- Favicons: .ico in-repo; iOS uses apple-touch-icon -->
     <link rel="icon" href="assets/img/Md_Nayeem_Hossain_Java_Developer_icon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
 
-    <!-- Preload responsive hero image so it's ready for LCP. WebP variants
-         cover ~99% of browsers; the PNG fallback is fetched only when WebP
-         is unsupported, via the <picture> element below. -->
     <link rel="preload" as="image" href="assets/img/profile-1296.webp"
         imagesrcset="assets/img/profile-800.webp 800w, assets/img/profile-1296.webp 1296w, assets/img/profile-1600.webp 1600w"
         imagesizes="(max-width: 991px) 90vw, 648px" fetchpriority="high">
 
-    <!-- Fonts -->
-    <!-- Optimized: trimmed italic variants and unused weights for smaller font payload. display=swap keeps text visible during load -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- AOS animations and Font Awesome aren't needed for first paint;
-         load them non-blocking via the print/onload swap pattern. -->
     <link rel="stylesheet" href="assets/vendor/aos/aos.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="assets/css/all.min.css" media="print" onload="this.media='all'">
     <noscript>
@@ -114,12 +90,9 @@
         <link rel="stylesheet" href="assets/css/all.min.css">
     </noscript>
 
-    <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
-    <!-- Custom Styles -->
     <link href="assets/css/styles.css" rel="stylesheet">
 
-    <!-- Structured data: WebSite + WebPage + employer + Person (@graph) -->
     <script type="application/ld+json">
   {
       "@context": "https://schema.org",
@@ -253,7 +226,6 @@
 
 <body id="top" class="index-page">
 
-    <!-- Page Preloader — styles in assets/css/preloader.css, logic in assets/js/preloader.js. -->
     <div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="Loading portfolio">
         <div class="preloader__brand" aria-hidden="true">
             <svg class="preloader__ring" viewBox="0 0 100 100">
@@ -268,10 +240,8 @@
         </div>
     </div>
 
-    <!-- Skip to Main Content Link (Accessibility) -->
     <a href="#main" class="skip-to-main" aria-label="Skip navigation and go to main content">Skip to main content</a>
 
-    <!-- Theme Toggle (sun / moon). Actual state is driven by data-theme on <html>. -->
     <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to light theme"
         title="Switch to light theme" aria-pressed="true">
         <i class="fas fa-sun theme-icon theme-icon-sun" aria-hidden="true"></i>
@@ -1514,7 +1484,6 @@
     <a href="#top" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"
         aria-label="Scroll to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
 
-    <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
     <script src="assets/vendor/aos/aos.js" defer></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
@@ -1522,16 +1491,9 @@
     <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
     <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
-
-    <!-- Main JS File -->
     <script src="assets/js/main.js" defer></script>
-
-    <!-- Additional Scripts -->
     <script src="assets/js/additional.js" defer></script>
-
-    <!-- Theme Toggle -->
     <script src="assets/js/theme-toggle.js" defer></script>
-
 </body>
 
 </html>
