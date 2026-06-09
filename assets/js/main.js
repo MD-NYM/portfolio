@@ -133,9 +133,9 @@
   /**
    * Defer non-critical widgets until after LCP / main-thread idle time.
    */
-  function initDeferredWidgets() {
-    aosInit();
+  window.addEventListener('load', aosInit);
 
+  function initDeferredWidgets() {
     const selectTyped = document.querySelector('.typed');
     if (selectTyped && typeof Typed !== 'undefined') {
       let typed_strings = selectTyped.getAttribute('data-typed-items');
@@ -148,7 +148,8 @@
         smartBackspace: true,
         typeSpeed: 100,
         backSpeed: 50,
-        backDelay: 2000
+        backDelay: 2000,
+        showCursor: false
       });
     }
 
@@ -225,9 +226,9 @@
   }
 
   if ('requestIdleCallback' in window) {
-    requestIdleCallback(initDeferredWidgets, { timeout: 2000 });
+    requestIdleCallback(initDeferredWidgets);
   } else {
-    setTimeout(initDeferredWidgets, 200);
+    setTimeout(initDeferredWidgets, 500);
   }
 
   /**

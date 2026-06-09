@@ -30,7 +30,144 @@
         })();
     </script>
 
-    <link href="assets/css/preloader.css" rel="stylesheet">
+    <style>
+/* Page Preloader — inlined to avoid render-blocking request */
+html.is-loading,
+html.is-loading body {
+    overflow: hidden !important;
+    scrollbar-gutter: stable;
+}
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    background: #0b1220;
+    color: #f9fafb;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 450ms ease, visibility 450ms ease;
+    background-image:
+        radial-gradient(circle at 50% 40%, rgba(0, 174, 255, 0.12) 0%, rgba(0, 174, 255, 0) 55%),
+        linear-gradient(180deg, #0b1220 0%, #111827 100%);
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+html[data-theme="light"] .preloader {
+    color: #0b2a55;
+    background-image:
+        radial-gradient(circle at 50% 40%, rgba(6, 92, 194, 0.08) 0%, rgba(6, 92, 194, 0) 55%),
+        linear-gradient(180deg, #ffffff 0%, #f3f6fb 100%);
+}
+.preloader__brand {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    display: grid;
+    place-items: center;
+}
+.preloader__ring {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    animation: preloader-spin 1.4s linear infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 174, 255, 0.35));
+}
+html[data-theme="light"] .preloader__ring {
+    filter: drop-shadow(0 0 8px rgba(6, 92, 194, 0.25));
+}
+.preloader__ring-track {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.08);
+    stroke-width: 3;
+}
+html[data-theme="light"] .preloader__ring-track {
+    stroke: rgba(0, 0, 0, 0.08);
+}
+.preloader__ring-arc {
+    fill: none;
+    stroke: #00aeff;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 90 220;
+    transform-origin: 50% 50%;
+}
+html[data-theme="light"] .preloader__ring-arc {
+    stroke: #065cc2;
+}
+@keyframes preloader-spin {
+    to { transform: rotate(360deg); }
+}
+.preloader__mono {
+    position: relative;
+    font-family: "Quicksand", "Open Sans", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.02em;
+    color: #00aeff;
+    text-shadow: 0 0 18px rgba(0, 174, 255, 0.45);
+    animation: preloader-pulse 1.8s ease-in-out infinite;
+}
+html[data-theme="light"] .preloader__mono {
+    color: #065cc2;
+    text-shadow: 0 0 14px rgba(6, 92, 194, 0.25);
+}
+@keyframes preloader-pulse {
+    0%, 100% { opacity: 0.75; transform: scale(1); }
+    50%      { opacity: 1;    transform: scale(1.06); }
+}
+.preloader__name {
+    font: 600 11px/1 "Open Sans", system-ui, -apple-system, sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+.preloader__bar {
+    position: relative;
+    width: 180px;
+    height: 2px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+html[data-theme="light"] .preloader__bar {
+    background: rgba(0, 0, 0, 0.08);
+}
+.preloader__bar-fill {
+    display: block;
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #00aeff 0%, #00d2ff 100%);
+    box-shadow: 0 0 8px rgba(0, 174, 255, 0.55);
+    transition: width 180ms ease-out;
+}
+html[data-theme="light"] .preloader__bar-fill {
+    background: linear-gradient(90deg, #065cc2 0%, #00aeff 100%);
+    box-shadow: 0 0 6px rgba(6, 92, 194, 0.35);
+}
+.preloader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+@media (max-width: 480px) {
+    .preloader__brand { width: 84px; height: 84px; }
+    .preloader__mono  { font-size: 22px; }
+    .preloader__name  { font-size: 10px; letter-spacing: 0.28em; }
+    .preloader__bar   { width: 150px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .preloader__ring  { animation-duration: 3s; }
+    .preloader__mono  { animation: none; opacity: 1; }
+    .preloader        { transition-duration: 200ms; }
+    .preloader__bar-fill { transition-duration: 80ms; }
+}
+    </style>
     <script>document.documentElement.classList.add('is-loading');</script>
     <script>
         window._ie = function (el) {
@@ -80,11 +217,11 @@
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&family=Quicksand:wght@500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&family=Quicksand:wght@500;700&display=optional"
         rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
         <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&family=Quicksand:wght@500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&family=Quicksand:wght@500;700&display=optional"
             rel="stylesheet">
     </noscript>
 
@@ -100,229 +237,8 @@
         <link rel="stylesheet" href="assets/css/all.min.css">
     </noscript>
 
-    <style>
-        :root,
-        :root[data-theme=dark] {
-            --primary-color: #00aeff;
-            --primary-glow: #00d2ff;
-            --bg-dark: #111827;
-            --bg-card: rgba(31, 41, 55, .5);
-            --border-color: rgba(255, 255, 255, .1);
-            --text-color: #d1d5db;
-            --text-light: #f9fafb;
-            --text-muted-custom: #a0aec0;
-            --background-color: #111827;
-            --default-color: #d1d5db;
-            --heading-color: #f9fafb;
-            --accent-color: #00aeff;
-            --surface-color: #1f2937;
-            --contrast-color: #fff;
-            --nav-color: #d1d5db;
-            --nav-hover-color: #00aeff;
-            color-scheme: dark
-        }
-
-        :root[data-theme=light] {
-            --primary-color: #065cc2;
-            --primary-glow: #0088ff;
-            --bg-dark: #f7faff;
-            --bg-card: rgba(255, 255, 255, .9);
-            --border-color: rgba(0, 0, 0, .08);
-            --text-color: #314862;
-            --text-light: #0f172a;
-            --text-muted-custom: #64748b;
-            --background-color: #fff;
-            --default-color: #314862;
-            --heading-color: #13447f;
-            --accent-color: #065cc2;
-            --surface-color: #fff;
-            --contrast-color: #fff;
-            --nav-color: #314862;
-            --nav-hover-color: #065cc2;
-            color-scheme: light
-        }
-
-        :root {
-            --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-            --heading-font: "Quicksand", sans-serif;
-            --nav-font: "Open Sans", sans-serif
-        }
-
-        html {
-            scroll-behavior: smooth
-        }
-
-        body {
-            font-family: Roboto, sans-serif;
-            color: var(--text-color);
-            line-height: 1.7;
-            background-color: var(--bg-dark);
-            margin: 0
-        }
-
-        .skip-to-main {
-            position: absolute;
-            top: -100px;
-            left: 0;
-            background: var(--primary-color);
-            color: var(--text-light);
-            padding: 1em;
-            text-decoration: none;
-            z-index: 10000;
-            font-weight: 600;
-            border-radius: 0 0 4px 0
-        }
-
-        .skip-to-main:focus {
-            top: 0;
-            outline: 2px solid var(--primary-glow);
-            outline-offset: 2px
-        }
-
-        .header {
-            color: var(--default-color);
-            padding: 15px 0;
-            transition: all .5s;
-            z-index: 997
-        }
-
-        .mobile-nav-toggle {
-            color: var(--nav-color);
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            font-size: 32px;
-            line-height: 0;
-            cursor: pointer;
-            display: block !important;
-            z-index: 998
-        }
-
-        .navmenu {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            right: -300px;
-            z-index: 997;
-            transition: .3s;
-            width: 300px;
-            overflow: hidden;
-            background: var(--surface-color, #fff);
-            display: flex;
-            flex-direction: column;
-            padding: 24px 0 16px;
-            box-shadow: 0 12px 40px rgba(19, 68, 127, .18);
-            border-left: 1px solid color-mix(in srgb, var(--default-color, #314862), transparent 90%)
-        }
-
-        .mobile-nav-active {
-            overflow: hidden
-        }
-
-        .mobile-nav-active .navmenu {
-            right: 0;
-            background-color: var(--nav-mobile-background-color, #11427d)
-        }
-
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 72px;
-            z-index: 1001;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 1px solid var(--border-color);
-            background: var(--bg-card);
-            color: var(--text-light);
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, .18)
-        }
-
-        .hero {
-            padding: 120px 0;
-            position: relative;
-            overflow: hidden;
-            min-height: auto;
-            display: flex;
-            align-items: flex-start
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 2
-        }
-
-        .hero .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            color: var(--heading-color, #13447f)
-        }
-
-        .hero .hero-rotator {
-            margin: 0 0 1rem;
-            min-height: 1.8em;
-            color: color-mix(in srgb, var(--default-color, #314862), transparent 15%);
-            font-size: 1.05rem;
-            font-weight: 500
-        }
-
-        .hero .hero-rotator .typed {
-            color: var(--accent-color, #065cc2);
-            font-weight: 600
-        }
-
-        .hero .image-container {
-            position: relative;
-            max-width: 520px;
-            width: 100%
-        }
-
-        .hero .hero-main-image {
-            aspect-ratio: 1/1;
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 18px;
-            position: relative;
-            z-index: 2
-        }
-
-        @media (max-width:991px) {
-            .hero .hero-content {
-                padding: 60px 30px;
-                text-align: center
-            }
-
-            .hero .hero-title {
-                font-size: 2.8rem
-            }
-        }
-
-        @media (max-width:576px) {
-            .hero .hero-content {
-                padding: 40px 20px
-            }
-
-            .hero .hero-title {
-                font-size: 2.2rem
-            }
-        }
-    </style>
-    <link href="assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript>
-        <link href="assets/css/main.css" rel="stylesheet">
-    </noscript>
-    <link href="assets/css/styles.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript>
-        <link href="assets/css/styles.css" rel="stylesheet">
-    </noscript>
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
 
     <script type="application/ld+json">
   {
