@@ -99,109 +99,13 @@
       mirror: false
     });
   }
-  window.addEventListener('load', aosInit);
 
   /**
-   * Initiate Pure Counter
+   * Initiate Pure Counter (hero stats — keep eager for above-the-fold content)
    */
   if (typeof PureCounter !== 'undefined') {
     new PureCounter();
   }
-
-  /**
-   * Init typed.js
-   */
-  const selectTyped = document.querySelector('.typed');
-  if (selectTyped) {
-    let typed_strings = selectTyped.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',').map((item) => item.trim());
-    new Typed('.typed', {
-      strings: typed_strings,
-      contentType: 'null',
-      loop: true,
-      startDelay: 250,
-      smartBackspace: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
-
-  /**
-   * Animate the skills items on reveal
-   */
-  let skillsAnimation = document.querySelectorAll('.skills-animation');
-  skillsAnimation.forEach((item) => {
-    new Waypoint({
-      element: item,
-      offset: '80%',
-      handler: function (direction) {
-        let progress = item.querySelectorAll('.progress .progress-bar');
-        progress.forEach(el => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%';
-        });
-
-        if (item.dataset.countersStarted !== 'true') {
-          const skillCounters = item.querySelectorAll('.skill-purecounter');
-          skillCounters.forEach((counter) => counter.classList.add('purecounter'));
-          if (skillCounters.length && typeof PureCounter !== 'undefined') {
-            new PureCounter();
-          }
-          item.dataset.countersStarted = 'true';
-        }
-
-        this.destroy();
-      }
-    });
-  });
-
-  /**
-   * Initiate glightbox (only if GLightbox is available)
-   */
-  if (typeof GLightbox !== 'undefined') {
-    GLightbox({
-      selector: '.glightbox'
-    });
-  }
-
-  /**
-   * Init isotope layout and filters
-   */
-  document.querySelectorAll('.isotope-layout').forEach(function (isotopeItem) {
-    let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-    let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
-    let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
-    const isotopeContainer = isotopeItem.querySelector('.isotope-container');
-    if (!isotopeContainer || typeof imagesLoaded === 'undefined' || typeof Isotope === 'undefined') return;
-
-    let initIsotope;
-    imagesLoaded(isotopeContainer, function () {
-      initIsotope = new Isotope(isotopeContainer, {
-        itemSelector: '.isotope-item',
-        layoutMode: layout,
-        filter: filter,
-        sortBy: sort
-      });
-    });
-
-    isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
-      filters.addEventListener('click', function () {
-        const activeFilter = isotopeItem.querySelector('.isotope-filters .filter-active');
-        if (activeFilter) {
-          activeFilter.classList.remove('filter-active');
-        }
-        this.classList.add('filter-active');
-        if (!initIsotope) return;
-        initIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        if (typeof aosInit === 'function') {
-          aosInit();
-        }
-      }, false);
-    });
-
-  });
 
   /**
    * Init swiper sliders
@@ -226,16 +130,105 @@
     });
   }
 
-  window.addEventListener("load", initSwiper);
-
   /**
-   * Frequently Asked Questions Toggle
+   * Defer non-critical widgets until after LCP / main-thread idle time.
    */
-  document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle, .faq-item .faq-header').forEach((faqItem) => {
-    faqItem.addEventListener('click', () => {
-      faqItem.parentNode.classList.toggle('faq-active');
+  function initDeferredWidgets() {
+    aosInit();
+
+    const selectTyped = document.querySelector('.typed');
+    if (selectTyped && typeof Typed !== 'undefined') {
+      let typed_strings = selectTyped.getAttribute('data-typed-items');
+      typed_strings = typed_strings.split(',').map((item) => item.trim());
+      new Typed('.typed', {
+        strings: typed_strings,
+        contentType: 'null',
+        loop: true,
+        startDelay: 250,
+        smartBackspace: true,
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 2000
+      });
+    }
+
+    document.querySelectorAll('.skills-animation').forEach((item) => {
+      new Waypoint({
+        element: item,
+        offset: '80%',
+        handler: function (direction) {
+          let progress = item.querySelectorAll('.progress .progress-bar');
+          progress.forEach(el => {
+            el.style.width = el.getAttribute('aria-valuenow') + '%';
+          });
+
+          if (item.dataset.countersStarted !== 'true') {
+            const skillCounters = item.querySelectorAll('.skill-purecounter');
+            skillCounters.forEach((counter) => counter.classList.add('purecounter'));
+            if (skillCounters.length && typeof PureCounter !== 'undefined') {
+              new PureCounter();
+            }
+            item.dataset.countersStarted = 'true';
+          }
+
+          this.destroy();
+        }
+      });
     });
-  });
+
+    if (typeof GLightbox !== 'undefined') {
+      GLightbox({
+        selector: '.glightbox'
+      });
+    }
+
+    document.querySelectorAll('.isotope-layout').forEach(function (isotopeItem) {
+      let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
+      let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
+      let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
+      const isotopeContainer = isotopeItem.querySelector('.isotope-container');
+      if (!isotopeContainer || typeof imagesLoaded === 'undefined' || typeof Isotope === 'undefined') return;
+
+      let initIsotope;
+      imagesLoaded(isotopeContainer, function () {
+        initIsotope = new Isotope(isotopeContainer, {
+          itemSelector: '.isotope-item',
+          layoutMode: layout,
+          filter: filter,
+          sortBy: sort
+        });
+      });
+
+      isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
+        filters.addEventListener('click', function () {
+          const activeFilter = isotopeItem.querySelector('.isotope-filters .filter-active');
+          if (activeFilter) {
+            activeFilter.classList.remove('filter-active');
+          }
+          this.classList.add('filter-active');
+          if (!initIsotope) return;
+          initIsotope.arrange({
+            filter: this.getAttribute('data-filter')
+          });
+          aosInit();
+        }, false);
+      });
+    });
+
+    initSwiper();
+
+    document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle, .faq-item .faq-header').forEach((faqItem) => {
+      faqItem.addEventListener('click', () => {
+        faqItem.parentNode.classList.toggle('faq-active');
+      });
+    });
+  }
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(initDeferredWidgets, { timeout: 2000 });
+  } else {
+    setTimeout(initDeferredWidgets, 200);
+  }
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.

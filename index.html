@@ -75,21 +75,23 @@
 
     <link rel="preload" as="image" href="assets/img/profile-1296.webp"
         imagesrcset="assets/img/profile-800.webp 800w, assets/img/profile-1296.webp 1296w, assets/img/profile-1600.webp 1600w"
-        imagesizes="(max-width: 991px) 90vw, 648px" fetchpriority="high">
+        imagesizes="(max-width: 575px) 95vw, (max-width: 991px) 90vw, 648px" fetchpriority="high">
 
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&family=Quicksand:wght@500;700&display=swap"
         rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
         <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Open+Sans:wght@400;600&family=Quicksand:wght@500;700&display=swap"
             rel="stylesheet">
     </noscript>
 
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"></noscript>
+    <noscript>
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    </noscript>
 
     <link rel="stylesheet" href="assets/vendor/aos/aos.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="assets/css/all.min.css" media="print" onload="this.media='all'">
@@ -98,8 +100,229 @@
         <link rel="stylesheet" href="assets/css/all.min.css">
     </noscript>
 
-    <link href="assets/css/main.css" rel="stylesheet">
-    <link href="assets/css/styles.css" rel="stylesheet">
+    <style>
+        :root,
+        :root[data-theme=dark] {
+            --primary-color: #00aeff;
+            --primary-glow: #00d2ff;
+            --bg-dark: #111827;
+            --bg-card: rgba(31, 41, 55, .5);
+            --border-color: rgba(255, 255, 255, .1);
+            --text-color: #d1d5db;
+            --text-light: #f9fafb;
+            --text-muted-custom: #a0aec0;
+            --background-color: #111827;
+            --default-color: #d1d5db;
+            --heading-color: #f9fafb;
+            --accent-color: #00aeff;
+            --surface-color: #1f2937;
+            --contrast-color: #fff;
+            --nav-color: #d1d5db;
+            --nav-hover-color: #00aeff;
+            color-scheme: dark
+        }
+
+        :root[data-theme=light] {
+            --primary-color: #065cc2;
+            --primary-glow: #0088ff;
+            --bg-dark: #f7faff;
+            --bg-card: rgba(255, 255, 255, .9);
+            --border-color: rgba(0, 0, 0, .08);
+            --text-color: #314862;
+            --text-light: #0f172a;
+            --text-muted-custom: #64748b;
+            --background-color: #fff;
+            --default-color: #314862;
+            --heading-color: #13447f;
+            --accent-color: #065cc2;
+            --surface-color: #fff;
+            --contrast-color: #fff;
+            --nav-color: #314862;
+            --nav-hover-color: #065cc2;
+            color-scheme: light
+        }
+
+        :root {
+            --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            --heading-font: "Quicksand", sans-serif;
+            --nav-font: "Open Sans", sans-serif
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: Roboto, sans-serif;
+            color: var(--text-color);
+            line-height: 1.7;
+            background-color: var(--bg-dark);
+            margin: 0
+        }
+
+        .skip-to-main {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            background: var(--primary-color);
+            color: var(--text-light);
+            padding: 1em;
+            text-decoration: none;
+            z-index: 10000;
+            font-weight: 600;
+            border-radius: 0 0 4px 0
+        }
+
+        .skip-to-main:focus {
+            top: 0;
+            outline: 2px solid var(--primary-glow);
+            outline-offset: 2px
+        }
+
+        .header {
+            color: var(--default-color);
+            padding: 15px 0;
+            transition: all .5s;
+            z-index: 997
+        }
+
+        .mobile-nav-toggle {
+            color: var(--nav-color);
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 32px;
+            line-height: 0;
+            cursor: pointer;
+            display: block !important;
+            z-index: 998
+        }
+
+        .navmenu {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: -300px;
+            z-index: 997;
+            transition: .3s;
+            width: 300px;
+            overflow: hidden;
+            background: var(--surface-color, #fff);
+            display: flex;
+            flex-direction: column;
+            padding: 24px 0 16px;
+            box-shadow: 0 12px 40px rgba(19, 68, 127, .18);
+            border-left: 1px solid color-mix(in srgb, var(--default-color, #314862), transparent 90%)
+        }
+
+        .mobile-nav-active {
+            overflow: hidden
+        }
+
+        .mobile-nav-active .navmenu {
+            right: 0;
+            background-color: var(--nav-mobile-background-color, #11427d)
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 72px;
+            z-index: 1001;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-light);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, .18)
+        }
+
+        .hero {
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+            min-height: auto;
+            display: flex;
+            align-items: flex-start
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2
+        }
+
+        .hero .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: var(--heading-color, #13447f)
+        }
+
+        .hero .hero-rotator {
+            margin: 0 0 1rem;
+            min-height: 1.8em;
+            color: color-mix(in srgb, var(--default-color, #314862), transparent 15%);
+            font-size: 1.05rem;
+            font-weight: 500
+        }
+
+        .hero .hero-rotator .typed {
+            color: var(--accent-color, #065cc2);
+            font-weight: 600
+        }
+
+        .hero .image-container {
+            position: relative;
+            max-width: 520px;
+            width: 100%
+        }
+
+        .hero .hero-main-image {
+            aspect-ratio: 1/1;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 18px;
+            position: relative;
+            z-index: 2
+        }
+
+        @media (max-width:991px) {
+            .hero .hero-content {
+                padding: 60px 30px;
+                text-align: center
+            }
+
+            .hero .hero-title {
+                font-size: 2.8rem
+            }
+        }
+
+        @media (max-width:576px) {
+            .hero .hero-content {
+                padding: 40px 20px
+            }
+
+            .hero .hero-title {
+                font-size: 2.2rem
+            }
+        }
+    </style>
+    <link href="assets/css/main.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="assets/css/main.css" rel="stylesheet">
+    </noscript>
+    <link href="assets/css/styles.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="assets/css/styles.css" rel="stylesheet">
+    </noscript>
 
     <script type="application/ld+json">
   {
@@ -452,7 +675,7 @@
                                     sizes="(max-width: 991px) 90vw, 648px">
                                 <img src="assets/img/profile-1296.png"
                                     alt="Md Nayeem Hossain - Full-Stack Java Developer"
-                                    class="img-fluid hero-main-image" width="800" height="600" fetchpriority="high"
+                                    class="img-fluid hero-main-image" width="800" height="800" fetchpriority="high"
                                     onerror="window._ie(this)">
                             </picture>
                             <div class="image-overlay" aria-hidden="true"></div>
@@ -582,7 +805,8 @@
                                 (Java EE)</span>
                         </li>
                         <li class="journey-node" data-aos="fade-up" data-aos-delay="500">
-                            <span class="journey-year"><time datetime="2025-02">Feb 2025</time> – <time datetime="2026-05">May 2026</time></span>
+                            <span class="journey-year"><time datetime="2025-02">Feb 2025</time> – <time
+                                    datetime="2026-05">May 2026</time></span>
                             <span class="journey-desc">Junior Software Engineer at eGeneration PLC</span>
                         </li>
                         <li class="journey-node journey-node-current" data-aos="fade-up" data-aos-delay="600">
@@ -986,7 +1210,8 @@
                                             <h4>Junior Software Engineer</h4>
                                             <h5>eGeneration PLC</h5>
                                         </div>
-                                        <span class="duration"><time datetime="2025-02">Feb 2025</time> – <time datetime="2026-05">May 2026</time></span>
+                                        <span class="duration"><time datetime="2025-02">Feb 2025</time> – <time
+                                                datetime="2026-05">May 2026</time></span>
                                     </div>
                                     <div class="card-body">
                                         <p>Engineered and maintained microservices for eG-Health and eG-HRMS on
@@ -1031,7 +1256,8 @@
                                             <h4>Java Developer Intern</h4>
                                             <h5>eGeneration PLC</h5>
                                         </div>
-                                        <span class="duration"><time datetime="2024-11">Nov 2024</time> – <time datetime="2025-01">Jan 2025</time></span>
+                                        <span class="duration"><time datetime="2024-11">Nov 2024</time> – <time
+                                                datetime="2025-01">Jan 2025</time></span>
                                     </div>
                                     <div class="card-body">
                                         <p>Built REST APIs for a healthcare platform and prototyped an internal
@@ -1077,7 +1303,8 @@
                                     <article class="education-content">
                                         <div class="degree-header">
                                             <h4>Diploma in Enterprise Systems Analysis &amp; Design</h4>
-                                            <span class="year"><time datetime="2023-11">Nov 2023</time> – <time datetime="2024-10">Oct 2024</time></span>
+                                            <span class="year"><time datetime="2023-11">Nov 2023</time> – <time
+                                                    datetime="2024-10">Oct 2024</time></span>
                                         </div>
                                         <h5 class="institution">IsDB-BISEW IT Scholarship Programme</h5>
                                         <p>Specialized in Java EE, Spring Framework, and enterprise application
@@ -1092,7 +1319,8 @@
                                     <article class="education-content">
                                         <div class="degree-header">
                                             <h4>Bachelor of Science</h4>
-                                            <span class="year"><time datetime="2014-08">Aug 2014</time> – <time datetime="2019-05">May 2019</time></span>
+                                            <span class="year"><time datetime="2014-08">Aug 2014</time> – <time
+                                                    datetime="2019-05">May 2019</time></span>
                                         </div>
                                         <h5 class="institution">University of Dhaka</h5>
                                         <p>Dhaka, Bangladesh</p>
@@ -1539,11 +1767,11 @@
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
     <script src="assets/vendor/aos/aos.js" defer></script>
     <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
-    <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
     <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
     <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
     <script src="assets/js/main.js" defer></script>
+    <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
     <script src="assets/js/additional.js" defer></script>
     <script src="assets/js/theme-toggle.js" defer></script>
 </body>
