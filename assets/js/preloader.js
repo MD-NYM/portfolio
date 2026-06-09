@@ -16,19 +16,19 @@
 (function () {
     'use strict';
 
-    var MIN_DISPLAY_MS = 500;  // shortest time the overlay stays visible
-    var FADE_MS        = 450;  // must match the CSS .preloader transition
-    var SAFETY_MS      = 8000; // hard cap, just in case `load` never fires
+    var MIN_DISPLAY_MS = 200;  // shortest time the overlay stays visible
+    var FADE_MS = 450;  // must match the CSS .preloader transition
+    var SAFETY_MS = 8000; // hard cap, just in case `load` never fires
 
-    var html      = document.documentElement;
+    var html = document.documentElement;
     var preloader = document.getElementById('preloader');
     if (!preloader) { html.classList.remove('is-loading'); return; }
 
-    var barEl     = preloader.querySelector('.preloader__bar-fill');
+    var barEl = preloader.querySelector('.preloader__bar-fill');
     var startTime = Date.now();
-    var progress  = 0;
-    var timer     = null;
-    var hidden    = false;
+    var progress = 0;
+    var timer = null;
+    var hidden = false;
 
     function setProgress(value) {
         if (barEl) barEl.style.width = value + '%';
@@ -49,7 +49,7 @@
         setProgress(100);
 
         var elapsed = Date.now() - startTime;
-        var wait    = Math.max(0, MIN_DISPLAY_MS - elapsed);
+        var wait = Math.max(0, MIN_DISPLAY_MS - elapsed);
 
         setTimeout(function () {
             preloader.classList.add('is-hidden');

@@ -3260,6 +3260,10 @@ button:focus {
 }
 
 .hero .hero-main-image {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
     border-radius: 18px;
     border: 1px solid color-mix(in srgb, var(--default-color, #314862), transparent 88%);
     box-shadow: 0 20px 50px rgba(19, 68, 127, .14);
