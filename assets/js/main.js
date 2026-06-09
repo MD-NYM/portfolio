@@ -9,12 +9,13 @@
 (function () {
   "use strict";
 
+  const selectBody = document.querySelector('body');
+  const selectHeader = document.querySelector('#header');
+
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
   function toggleScrolled() {
-    const selectBody = document.querySelector('body');
-    const selectHeader = document.querySelector('#header');
     if (!selectBody || !selectHeader) return;
     if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
@@ -101,13 +102,6 @@
   }
 
   /**
-   * Initiate Pure Counter (hero stats — keep eager for above-the-fold content)
-   */
-  if (typeof PureCounter !== 'undefined') {
-    new PureCounter();
-  }
-
-  /**
    * Init swiper sliders
    */
   function initSwiper() {
@@ -136,6 +130,10 @@
   window.addEventListener('load', aosInit);
 
   function initDeferredWidgets() {
+    if (typeof PureCounter !== 'undefined') {
+      new PureCounter();
+    }
+
     const selectTyped = document.querySelector('.typed');
     if (selectTyped && typeof Typed !== 'undefined') {
       let typed_strings = selectTyped.getAttribute('data-typed-items');
