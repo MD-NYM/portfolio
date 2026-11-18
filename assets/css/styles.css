@@ -3040,6 +3040,8 @@ button:focus {
 }
 
 .hero .hero-rotator .typed {
+    display: inline-block;
+    min-width: 16ch;
     color: var(--accent-color, #065cc2);
     font-weight: 600
 }
