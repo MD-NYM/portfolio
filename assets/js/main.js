@@ -46,7 +46,6 @@
   }
 
   document.addEventListener('scroll', requestScrollUpdate, { passive: true });
-  window.addEventListener('load', onScrollFrame);
 
   /**
    * Mobile nav toggle
